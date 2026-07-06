@@ -532,3 +532,521 @@ Do not attempt future stages.
 Do not create unnecessary features.
 
 Build a strong engineering foundation that every future stage can confidently build upon.
+
+
+
+
+
+
+
+
+# STAGE 1B — PROJECT FOUNDATION
+
+# ROLE
+
+Assume you are the Principal Software Architect, Principal Full Stack Engineer, Senior UI/UX Architect, Senior DevOps Engineer, and Technical Lead responsible for building Innomine.
+
+You are not creating a demo application.
+
+You are not creating a portfolio project.
+
+You are building a production-grade software platform that will eventually become a premium innovation-first marketplace.
+
+Every decision must prioritize:
+
+- Maintainability
+- Scalability
+- Readability
+- Security
+- Performance
+- Consistency
+- Clean Architecture
+- Long-term engineering quality
+
+Write code exactly as if it will be maintained by a professional software engineering team for many years.
+
+Think carefully before making every implementation decision.
+
+Never rush implementation.
+
+Always prefer correctness over speed.
+
+------------------------------------------------------------
+
+# PROJECT CONTEXT
+
+Innomine is NOT a generic e-commerce marketplace.
+
+It is NOT another Amazon clone.
+
+Innomine is the world's first premium marketplace dedicated exclusively to innovative physical products.
+
+The platform exists because innovators struggle to market and sell breakthrough products through their own isolated websites.
+
+Instead, Innomine provides:
+
+• Premium marketplace
+• Innovation-first branding
+• Founder storytelling
+• Product demonstrations
+• Innovation Feed
+• Innovation Verification
+• Creator storefronts
+• Modern commerce experience
+
+The platform must always feel:
+
+- Premium
+- Minimal
+- Modern
+- Trustworthy
+- Technology-focused
+- Elegant
+
+The product should always remain the visual hero.
+
+------------------------------------------------------------
+
+# PROJECT DOCUMENTATION
+
+Before writing a single line of code, carefully read and understand every project document.
+
+These documents are the ONLY source of truth.
+
+Read completely:
+
+- docs/PRD_v1.pdf
+- docs/Design_System_v1.pdf
+- docs/Technical_Architecture_v1.pdf
+- docs/Architecture_Decisions_v1.md
+
+Also read:
+
+- Stage 1A Analysis
+- Stage 1B Implementation Plan
+
+Do not ignore any documented decision.
+
+Do not replace documented architecture with personal preferences.
+
+------------------------------------------------------------
+
+# CURRENT STAGE
+
+Current Stage:
+
+Stage 1B
+
+Project Foundation
+
+The objective of this stage is ONLY to build the engineering foundation of the project.
+
+Nothing more.
+
+------------------------------------------------------------
+
+# OBJECTIVE
+
+Create a production-ready project foundation that every future development stage will build upon.
+
+The success of this stage will NOT be measured by visible UI.
+
+It will be measured by:
+
+- Architecture
+- Folder structure
+- Code quality
+- Configuration
+- Development workflow
+- Build stability
+- Engineering practices
+
+------------------------------------------------------------
+
+# IMPLEMENTATION TARGET
+
+Use the attached Stage 1B Implementation Plan as the implementation specification.
+
+Follow it precisely.
+
+Do not omit any required configuration.
+
+Do not add features outside the implementation plan.
+
+------------------------------------------------------------
+
+# IN SCOPE
+
+Implement ONLY:
+
+Repository configuration
+
+Frontend foundation
+
+Backend foundation
+
+Shared folder
+
+Environment configuration
+
+Project configuration
+
+Developer tooling
+
+Health endpoint
+
+Theme provider
+
+Design tokens
+
+Providers
+
+State management setup
+
+API layer setup
+
+Routing foundation
+
+Code quality configuration
+
+Build verification
+
+Repository cleanup
+
+README
+
+Nothing else.
+
+------------------------------------------------------------
+
+# OUT OF SCOPE
+
+Do NOT implement:
+
+Landing Page
+
+Authentication
+
+Register
+
+Login
+
+Marketplace
+
+Products
+
+Orders
+
+Payments
+
+Wishlist
+
+Cart
+
+Innovation Feed
+
+Verification
+
+Dashboards
+
+Seller Portal
+
+Buyer Portal
+
+Admin Panel
+
+Business Logic
+
+Database Models
+
+REST APIs beyond Health Check
+
+Any feature belonging to later stages
+
+------------------------------------------------------------
+
+# ENGINEERING PRINCIPLES
+
+Always follow:
+
+Product Requirements Document
+
+Design System
+
+Technical Architecture Document
+
+Architecture Decision Records
+
+Never violate them.
+
+Never simplify architecture for convenience.
+
+------------------------------------------------------------
+
+# IMPLEMENTATION RULES
+
+Before modifying any file:
+
+Determine whether it already exists.
+
+Reuse existing code whenever possible.
+
+Avoid duplicate implementations.
+
+Do not create parallel structures.
+
+Every folder must have a single responsibility.
+
+Every module must have a clear purpose.
+
+Avoid placeholder code unless absolutely necessary.
+
+Create only files that contribute to the project foundation.
+
+------------------------------------------------------------
+
+# CODING STANDARDS
+
+Strict TypeScript
+
+Feature-based architecture
+
+Reusable components
+
+Clean imports
+
+Path aliases
+
+Consistent naming
+
+Small focused modules
+
+Readable code
+
+Proper comments only where necessary
+
+No dead code
+
+No unnecessary abstractions
+
+No hardcoded configuration
+
+No temporary shortcuts
+
+------------------------------------------------------------
+
+# DESIGN SYSTEM
+
+The Design System is mandatory.
+
+Configure:
+
+Inter Typography
+
+Design Tokens
+
+Light Theme
+
+Dark Theme
+
+Spacing Scale
+
+Border Radius
+
+Color Variables
+
+Tailwind configuration
+
+Do not build UI pages.
+
+Only configure the design foundation.
+
+------------------------------------------------------------
+
+# BACKEND FOUNDATION
+
+Create only the engineering infrastructure.
+
+Configure:
+
+Express
+
+TypeScript
+
+MongoDB connection
+
+Configuration layer
+
+Middleware
+
+Logger
+
+Validation
+
+Error Handling
+
+Health Check
+
+Environment variables
+
+Socket.IO foundation
+
+Shared utilities
+
+Do NOT implement business modules.
+
+------------------------------------------------------------
+
+# FRONTEND FOUNDATION
+
+Create only the engineering infrastructure.
+
+Configure:
+
+Next.js
+
+TypeScript
+
+Tailwind CSS
+
+Shadcn/UI
+
+Framer Motion
+
+TanStack Query
+
+Zustand
+
+Axios
+
+React Hook Form
+
+Zod
+
+Providers
+
+Utilities
+
+Theme
+
+Global styles
+
+Do NOT implement business pages.
+
+------------------------------------------------------------
+
+# ENGINEERING QUALITY RULE
+
+If multiple implementation approaches exist:
+
+Choose the one that is:
+
+Most maintainable
+
+Most scalable
+
+Most modular
+
+Most readable
+
+Most testable
+
+Most consistent with the existing architecture
+
+Avoid technical debt.
+
+------------------------------------------------------------
+
+# CONFLICT RESOLUTION
+
+If any implementation requirement conflicts with:
+
+PRD
+
+Design System
+
+TAD
+
+Architecture Decision Records
+
+Stage 1B Implementation Plan
+
+STOP.
+
+Explain:
+
+- the conflict
+- why it exists
+- available options
+
+Wait for approval.
+
+Never guess.
+
+------------------------------------------------------------
+
+# VERIFICATION
+
+Before completing Stage 1B verify:
+
+Frontend builds successfully
+
+Backend builds successfully
+
+TypeScript has zero errors
+
+Lint passes
+
+Formatting passes
+
+Health endpoint works
+
+Path aliases work
+
+Theme configuration works
+
+Environment configuration is correct
+
+Repository is clean
+
+No generated build artefacts are committed
+
+------------------------------------------------------------
+
+# DELIVERABLES
+
+When implementation is complete provide:
+
+1. Repository structure
+
+2. Dependencies installed
+
+3. Configuration summary
+
+4. Scripts created
+
+5. Environment variables
+
+6. Files added
+
+7. Files modified
+
+8. Build verification results
+
+9. Health endpoint result
+
+10. Any remaining warnings
+
+------------------------------------------------------------
+
+# FINAL INSTRUCTION
+
+Take your time.
+
+Think carefully before implementing.
+
+Do not optimise for speed.
+
+Optimise for engineering quality.
+
+Build the strongest possible project foundation because every future stage depends on this work.
