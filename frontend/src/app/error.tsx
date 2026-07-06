@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { AlertCircle } from "lucide-react";
 
-export default function ErrorBoundary({
+export default function Error({
   error,
   reset,
 }: {
@@ -10,20 +12,28 @@ export default function ErrorBoundary({
   reset: () => void;
 }) {
   useEffect(() => {
-    // Log the error to an error reporting service
-    console.error(error);
+    console.error("Application error:", error);
   }, [error]);
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center p-24">
-      <h2 className="text-2xl font-bold text-destructive">Something went wrong!</h2>
-      <p className="mt-4 text-muted-foreground">{error.message}</p>
-      <button
-        className="mt-8 rounded-md bg-primary px-4 py-2 text-primary-foreground"
-        onClick={() => reset()}
-      >
-        Try again
-      </button>
+    <div className="min-h-[70vh] flex items-center justify-center container mx-auto px-4">
+      <div className="text-center flex flex-col items-center">
+        <div className="w-20 h-20 bg-destructive/10 rounded-full flex items-center justify-center mb-6">
+          <AlertCircle className="w-10 h-10 text-destructive" />
+        </div>
+        <h1 className="text-3xl font-bold mb-4 text-foreground">System Malfunction</h1>
+        <p className="text-lg text-muted-foreground mb-10 max-w-md mx-auto">
+          We encountered an unexpected error while processing your request. Our engineering team has been notified.
+        </p>
+        <div className="flex gap-4">
+          <Button size="lg" onClick={() => reset()} className="rounded-full px-8">
+            Try Again
+          </Button>
+          <Button size="lg" variant="outline" onClick={() => window.location.href = '/'} className="rounded-full px-8">
+            Return Home
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }

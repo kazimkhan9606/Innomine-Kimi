@@ -1,10 +1,23 @@
+import { HeroSection } from "@/features/landing/HeroSection";
+import { FeaturedInnovations } from "@/features/landing/FeaturedInnovations";
+import { CategoriesSection } from "@/features/landing/CategoriesSection";
+import { WhyInnomine } from "@/features/landing/WhyInnomine";
+import { HowItWorks } from "@/features/landing/HowItWorks";
+import { StatsSection } from "@/features/landing/StatsSection";
+import { TestimonialsSection } from "@/features/landing/TestimonialsSection";
+import { CtaSection } from "@/features/landing/CtaSection";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <h1 className="text-4xl font-bold tracking-tight text-primary">Innomine Foundation</h1>
-        <p className="mt-4 text-muted-foreground">Frontend architecture initialized successfully.</p>
-      </div>
-    </main>
+    <div className="flex flex-col w-full">
+      <HeroSection />
+      <StatsSection />
+      <FeaturedInnovations />
+      <WhyInnomine />
+      <CategoriesSection />
+      <HowItWorks />
+      <TestimonialsSection />
+      <CtaSection />
+    </div>
   );
 }
