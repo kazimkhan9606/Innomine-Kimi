@@ -39,15 +39,15 @@ export const SortDropdown = React.forwardRef<HTMLDivElement, SortDropdownProps>(
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="inline-flex w-full items-center justify-between gap-x-1.5 rounded-xl bg-white px-4 py-2.5 text-sm font-medium text-slate-900 shadow-sm ring-1 ring-inset ring-slate-200 hover:bg-slate-50 dark:bg-slate-900 dark:text-slate-50 dark:ring-slate-800 dark:hover:bg-slate-800 transition-colors"
+            className="inline-flex w-full items-center justify-between gap-x-1.5 rounded-xl bg-surface px-4 py-2.5 text-sm font-medium text-text-primary shadow-surface ring-1 ring-inset ring-ring hover:bg-hover transition-colors"
           >
             Sort by: <span className="font-semibold">{selectedOption.label}</span>
-            <ChevronDown className="h-4 w-4 text-slate-400" aria-hidden="true" />
+            <ChevronDown className="h-4 w-4 text-text-muted" aria-hidden="true" />
           </button>
         </div>
 
         {isOpen && (
-          <div className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-xl bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-slate-900 dark:ring-slate-800 border border-slate-100 dark:border-slate-800">
+          <div className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-xl bg-popover shadow-floating ring-1 ring-ring focus:outline-none border border-border">
             <div className="py-1">
               {options.map((option) => (
                 <button
@@ -57,10 +57,10 @@ export const SortDropdown = React.forwardRef<HTMLDivElement, SortDropdownProps>(
                     setIsOpen(false);
                   }}
                   className={cn(
-                    "flex w-full items-center justify-between px-4 py-2 text-sm text-left hover:bg-slate-50 dark:hover:bg-slate-800/50",
+                    "flex w-full items-center justify-between px-4 py-2 text-sm text-left hover:bg-hover",
                     value === option.value
-                      ? "text-blue-600 font-semibold dark:text-blue-400"
-                      : "text-slate-700 dark:text-slate-300"
+                      ? "text-primary font-semibold"
+                      : "text-text-primary"
                   )}
                 >
                   {option.label}

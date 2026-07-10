@@ -15,15 +15,15 @@ export const StatisticCard: React.FC<StatisticCardProps> = ({
   className,
 }) => {
   return (
-    <div className={cn("p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 text-center flex flex-col justify-center", className)}>
-      <div className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white mb-2">
+    <div className={cn("p-6 rounded-xl bg-surface text-center flex flex-col justify-center", className)}>
+      <div className="text-4xl font-bold tracking-tight text-text-primary mb-2">
         {value}
       </div>
-      <div className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
+      <div className="text-sm font-medium text-text-secondary mb-1">
         {label}
       </div>
       {description && (
-        <p className="text-xs text-slate-500 dark:text-slate-400">
+        <p className="text-xs text-text-muted">
           {description}
         </p>
       )}

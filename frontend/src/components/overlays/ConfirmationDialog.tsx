@@ -28,24 +28,24 @@ export function ConfirmationDialog({
   
   const typeStyles = {
     danger: {
-      icon: <AlertTriangle className="w-6 h-6 text-red-600" />,
-      bg: "bg-red-50 dark:bg-red-900/20",
-      button: "bg-red-600 hover:bg-red-700 text-white",
+      icon: <AlertTriangle className="w-6 h-6 text-danger" />,
+      bg: "bg-danger/10",
+      button: "bg-danger hover:bg-danger/90 text-white",
     },
     warning: {
-      icon: <AlertTriangle className="w-6 h-6 text-amber-600" />,
-      bg: "bg-amber-50 dark:bg-amber-900/20",
-      button: "bg-amber-600 hover:bg-amber-700 text-white",
+      icon: <AlertTriangle className="w-6 h-6 text-warning" />,
+      bg: "bg-warning/10",
+      button: "bg-warning hover:bg-warning/90 text-white",
     },
     info: {
-      icon: <Info className="w-6 h-6 text-blue-600" />,
-      bg: "bg-blue-50 dark:bg-blue-900/20",
-      button: "bg-blue-600 hover:bg-blue-700 text-white",
+      icon: <Info className="w-6 h-6 text-info" />,
+      bg: "bg-info/10",
+      button: "bg-info hover:bg-info/90 text-white",
     },
     success: {
-      icon: <CheckCircle2 className="w-6 h-6 text-emerald-600" />,
-      bg: "bg-emerald-50 dark:bg-emerald-900/20",
-      button: "bg-emerald-600 hover:bg-emerald-700 text-white",
+      icon: <CheckCircle2 className="w-6 h-6 text-success" />,
+      bg: "bg-success/10",
+      button: "bg-success hover:bg-success/90 text-white",
     },
   };
 
@@ -64,10 +64,10 @@ export function ConfirmationDialog({
           {style.icon}
         </div>
         <div>
-          <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+          <h3 className="text-lg font-semibold text-text-primary">
             {title}
           </h3>
-          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+          <p className="mt-2 text-sm text-text-secondary">
             {message}
           </p>
         </div>
@@ -78,7 +78,7 @@ export function ConfirmationDialog({
           type="button"
           onClick={onClose}
           disabled={isLoading}
-          className="flex-1 px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700 dark:hover:bg-slate-700"
+          className="flex-1 px-4 py-2 text-sm font-medium text-text-primary bg-surface border border-border rounded-lg hover:bg-hover focus:outline-none focus:ring-2 focus:ring-ring"
         >
           {cancelLabel}
         </button>

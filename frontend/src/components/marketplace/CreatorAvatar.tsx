@@ -19,13 +19,13 @@ export const CreatorAvatar = React.forwardRef<HTMLDivElement, CreatorAvatarProps
 
     return (
       <div ref={ref} className={cn("relative inline-block", className)} {...props}>
-        <div className={cn("overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800 border-2 border-white dark:border-slate-900", sizes[size])}>
+        <div className={cn("overflow-hidden rounded-full bg-surface border-2 border-background", sizes[size])}>
           <img src={src} alt={alt} className="h-full w-full object-cover" loading="lazy" />
         </div>
         {isVerified && (
-          <div className="absolute bottom-0 right-0 rounded-full bg-white dark:bg-slate-900 p-0.5">
+          <div className="absolute bottom-0 right-0 rounded-full bg-background p-0.5">
             <svg
-              className="h-4 w-4 text-blue-500"
+              className="h-4 w-4 text-primary"
               fill="currentColor"
               viewBox="0 0 24 24"
             >

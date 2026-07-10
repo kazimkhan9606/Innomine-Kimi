@@ -15,14 +15,14 @@ export const HighlightCard: React.FC<HighlightCardProps> = ({
   className,
 }) => {
   return (
-    <div className={cn("p-8 rounded-3xl bg-blue-50 dark:bg-blue-900/20", className)}>
-      <h3 className="text-xl font-medium text-slate-800 dark:text-slate-200 mb-2">
+    <div className={cn("p-8 rounded-xl bg-primary/10", className)}>
+      <h3 className="text-xl font-medium text-text-primary mb-2">
         {title}
       </h3>
-      <div className="text-3xl md:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-4 tracking-tight">
+      <div className="text-3xl md:text-4xl font-bold text-primary mb-4 tracking-tight">
         {highlightText}
       </div>
-      <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+      <p className="text-text-secondary text-base leading-relaxed">
         {description}
       </p>
     </div>

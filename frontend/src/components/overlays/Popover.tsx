@@ -60,7 +60,7 @@ export function Popover({
       {isOpen && (
         <div
           className={cn(
-            "absolute z-50 w-64 p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-lg animate-in fade-in zoom-in-95 duration-200",
+            "absolute z-50 w-64 p-4 bg-popover border border-border rounded-xl shadow-dropdown animate-in fade-in zoom-in-95 duration-200",
             positionClasses[position],
             className
           )}

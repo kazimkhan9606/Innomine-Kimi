@@ -26,7 +26,8 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
     },
     ref
   ) => {
-    const selectId = id || React.useId()
+    const generatedId = React.useId()
+    const selectId = id || generatedId
 
     return (
       <InputWrapper
@@ -41,8 +42,8 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             id={selectId}
             ref={ref}
             className={cn(
-              "flex h-11 w-full appearance-none rounded-xl border border-slate-200 bg-white pl-3 pr-10 py-2 text-sm text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] disabled:cursor-not-allowed disabled:opacity-50 transition-colors",
-              error && "border-red-500 focus-visible:ring-red-500",
+              "flex h-11 w-full appearance-none rounded-md border border-input bg-background pl-3 pr-10 py-2 text-sm text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 transition-colors",
+              error && "border-danger focus-visible:ring-danger",
               className
             )}
             {...props}
@@ -54,7 +55,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             ))}
           </select>
           <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-            <ChevronDown className="h-5 w-5 text-slate-400" />
+            <ChevronDown className="h-5 w-5 text-text-muted" />
           </div>
         </div>
       </InputWrapper>

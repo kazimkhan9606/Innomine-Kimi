@@ -46,13 +46,13 @@ export function Tabs({
     return (
       <div 
         className={cn(
-          "relative flex items-center p-1 bg-slate-100 dark:bg-slate-800/50 rounded-xl", 
+          "relative flex items-center p-1 bg-surface rounded-xl", 
           fullWidth && "w-full",
           className
         )}
       >
         <div
-          className="absolute bg-white dark:bg-slate-800 rounded-lg shadow-sm transition-all duration-300 ease-out"
+          className="absolute bg-background rounded-lg shadow-sm transition-all duration-300 ease-out"
           style={{
             left: `${indicatorStyle.left}px`,
             width: `${indicatorStyle.width}px`,
@@ -72,9 +72,9 @@ export function Tabs({
                 "relative z-10 flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium transition-colors rounded-lg",
                 fullWidth && "flex-1",
                 isActive 
-                  ? "text-slate-900 dark:text-white" 
-                  : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300",
-                item.disabled && "opacity-50 cursor-not-allowed hover:text-slate-500"
+                  ? "text-text-primary" 
+                  : "text-text-secondary hover:text-text-primary",
+                item.disabled && "opacity-50 cursor-not-allowed hover:text-text-muted"
               )}
             >
               {item.icon}
@@ -100,9 +100,9 @@ export function Tabs({
                 "flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium rounded-full transition-all",
                 fullWidth && "flex-1",
                 isActive
-                  ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900"
-                  : "bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700",
-                item.disabled && "opacity-50 cursor-not-allowed hover:bg-slate-100"
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-surface text-text-secondary hover:bg-hover",
+                item.disabled && "opacity-50 cursor-not-allowed hover:bg-surface"
               )}
             >
               {item.icon}
@@ -116,7 +116,7 @@ export function Tabs({
 
   // default: line variant
   return (
-    <div className={cn("relative border-b border-slate-200 dark:border-slate-800", className)}>
+    <div className={cn("relative border-b border-border", className)}>
       <div className={cn("flex items-center gap-6 overflow-x-auto no-scrollbar", fullWidth && "w-full")}>
         {items.map((item, idx) => {
           const isActive = activeId === item.id;
@@ -130,9 +130,9 @@ export function Tabs({
                 "relative flex items-center justify-center gap-2 pb-3 pt-1 text-sm font-medium transition-colors whitespace-nowrap",
                 fullWidth && "flex-1",
                 isActive
-                  ? "text-slate-900 dark:text-white"
-                  : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300",
-                item.disabled && "opacity-50 cursor-not-allowed hover:text-slate-500"
+                  ? "text-text-primary"
+                  : "text-text-secondary hover:text-text-primary",
+                item.disabled && "opacity-50 cursor-not-allowed hover:text-text-muted"
               )}
             >
               {item.icon}
@@ -142,7 +142,7 @@ export function Tabs({
         })}
       </div>
       <div
-        className="absolute bottom-0 h-0.5 bg-slate-900 dark:bg-white transition-all duration-300 ease-out"
+        className="absolute bottom-0 h-0.5 bg-text-primary transition-all duration-300 ease-out"
         style={{
           left: `${indicatorStyle.left}px`,
           width: `${indicatorStyle.width}px`,

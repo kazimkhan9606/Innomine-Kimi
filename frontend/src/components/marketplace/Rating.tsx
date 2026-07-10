@@ -22,14 +22,14 @@ export const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
           ))}
           {hasHalfStar && <StarHalf className="h-4 w-4 fill-current" />}
           {[...Array(maxRating - fullStars - (hasHalfStar ? 1 : 0))].map((_, i) => (
-            <Star key={`empty-${i}`} className="h-4 w-4 text-slate-300 dark:text-slate-700" />
+            <Star key={`empty-${i}`} className="h-4 w-4 text-text-disabled" />
           ))}
         </div>
-        <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+        <span className="text-sm font-medium text-text-primary">
           {rating.toFixed(1)}
         </span>
         {showReviews && reviews !== undefined && (
-          <span className="text-sm text-slate-500 dark:text-slate-400">
+          <span className="text-sm text-text-secondary">
             ({reviews.toLocaleString()})
           </span>
         )}

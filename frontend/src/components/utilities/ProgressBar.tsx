@@ -29,21 +29,21 @@ export function ProgressBar({
   };
 
   const variants = {
-    default: "bg-blue-600 dark:bg-blue-500",
-    success: "bg-emerald-500 dark:bg-emerald-400",
-    warning: "bg-amber-500 dark:bg-amber-400",
-    danger: "bg-red-500 dark:bg-red-400",
+    default: "bg-primary",
+    success: "bg-success",
+    warning: "bg-warning",
+    danger: "bg-danger",
   };
 
   return (
     <div className={cn("w-full", className)}>
       {(label || showValue) && (
         <div className="flex justify-between items-center mb-1.5 text-sm font-medium">
-          {label && <span className="text-slate-700 dark:text-slate-300">{label}</span>}
-          {showValue && <span className="text-slate-500 dark:text-slate-400">{Math.round(percentage)}%</span>}
+          {label && <span className="text-text-primary">{label}</span>}
+          {showValue && <span className="text-text-secondary">{Math.round(percentage)}%</span>}
         </div>
       )}
-      <div className={cn("w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden", sizes[size])}>
+      <div className={cn("w-full bg-surface rounded-full overflow-hidden", sizes[size])}>
         <div
           className={cn("h-full rounded-full transition-all duration-500 ease-out", variants[variant])}
           style={{ width: `${percentage}%` }}

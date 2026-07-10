@@ -12,8 +12,8 @@ export interface CircularProgressProps {
 export function CircularProgress({
   value,
   size = "md",
-  trackColor = "text-slate-200 dark:text-slate-800",
-  indicatorColor = "text-blue-600 dark:text-blue-500",
+  trackColor = "text-surface",
+  indicatorColor = "text-primary",
   className,
 }: CircularProgressProps) {
   

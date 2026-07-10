@@ -22,8 +22,8 @@ export const CategoryChips = React.forwardRef<HTMLDivElement, CategoryChipsProps
             className={cn(
               "rounded-full px-4 py-1.5 text-sm font-medium transition-colors",
               activeId === category.id
-                ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900"
-                : "bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
+                ? "bg-primary text-primary-foreground"
+                : "bg-surface text-text-secondary hover:bg-hover"
             )}
           >
             {category.label}

@@ -2,56 +2,80 @@
 
 @theme {
   --color-border: var(--border);
+  --color-divider: var(--divider);
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
+  /* Semantic Colors */
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
 
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
 
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
 
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+
+  --color-danger: var(--danger);
+  --color-danger-foreground: var(--danger-foreground);
+
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+
+  /* Text Colors */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-placeholder: var(--text-placeholder);
+  --color-text-disabled: var(--text-disabled);
+
+  /* Surfaces */
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
 
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
+  /* States */
+  --color-hover: var(--hover);
+  --color-active: var(--active);
+  --color-disabled: var(--disabled);
+  --color-focus: var(--focus);
 
-  --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
-  
-  --spacing-1: 0.25rem;
-  --spacing-2: 0.5rem;
-  --spacing-3: 0.75rem;
-  --spacing-4: 1rem;
-  --spacing-6: 1.5rem;
-  --spacing-8: 2rem;
-  --spacing-12: 3rem;
-  --spacing-16: 4rem;
-  --spacing-20: 5rem;
-  --spacing-24: 6rem;
+  /* Border Radii */
+  --radius-xl: var(--radius-xl);
+  --radius-lg: var(--radius-lg);
+  --radius-md: var(--radius-md);
+  --radius-sm: var(--radius-sm);
+  --radius-xs: var(--radius-xs);
+
+  /* Elevations */
+  --shadow-surface: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-raised: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-floating: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+  --shadow-dropdown: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-modal: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 }
 
 @layer base {
   :root {
+    /* Backgrounds */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
+    --surface: 0 0% 98%;
+    --surface-hover: 0 0% 96%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
@@ -62,21 +86,46 @@
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
     /* Electric Blue as accent */
     --accent: 221 83% 53%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Semantic States */
+    --success: 142.1 76.2% 36.3%;
+    --success-foreground: 355.7 100% 97.3%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 48 96% 89%;
+    
+    --danger: 0 84.2% 60.2%;
+    --danger-foreground: 210 40% 98%;
 
+    --info: 221 83% 53%;
+    --info-foreground: 210 40% 98%;
+
+    /* Text Hierarchy */
+    --text-primary: 222.2 84% 4.9%;
+    --text-secondary: 215.4 16.3% 46.9%;
+    --text-muted: 215.4 16.3% 56.9%;
+    --text-placeholder: 215 20.2% 65.1%;
+    --text-disabled: 215.4 16.3% 76.9%;
+
+    /* UI Elements */
     --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --divider: 214.3 31.8% 95%;
+    --input: 214.3 31.8% 85%;
     --ring: 221 83% 53%;
+    --hover: 210 40% 96.1%;
+    --active: 210 40% 90%;
+    --disabled: 210 40% 96.1%;
+    --focus: 221 83% 53%;
 
-    --radius: 0.75rem; /* 12px for buttons, component defaults */
+    /* Border Radius */
+    --radius-xl: 1rem;       /* 16px */
+    --radius-lg: 0.75rem;    /* 12px */
+    --radius-md: 0.5rem;     /* 8px */
+    --radius-sm: 0.25rem;    /* 4px */
+    --radius-xs: 0.125rem;   /* 2px */
   }
 
   .dark {
@@ -84,10 +133,11 @@
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --surface: 217.2 32.6% 12.5%;
+    --surface-hover: 217.2 32.6% 17.5%;
+    --card: 217.2 32.6% 10.5%;
     --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
+    --popover: 217.2 32.6% 10.5%;
     --popover-foreground: 210 40% 98%;
 
     /* Pure White as primary text/element in dark mode */
@@ -97,19 +147,39 @@
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
     /* Electric Blue as accent */
     --accent: 221 83% 53%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Semantic States */
+    --success: 142.1 70.6% 45.3%;
+    --success-foreground: 144.9 80.4% 10%;
+    
+    --warning: 48 96% 53%;
+    --warning-foreground: 38 92% 10%;
+    
+    --danger: 0 62.8% 50.6%;
+    --danger-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
+    --info: 221 83% 53%;
+    --info-foreground: 210 40% 98%;
+
+    /* Text Hierarchy */
+    --text-primary: 210 40% 98%;
+    --text-secondary: 215 20.2% 85.1%;
+    --text-muted: 215 20.2% 65.1%;
+    --text-placeholder: 215 20.2% 45.1%;
+    --text-disabled: 215 20.2% 35.1%;
+
+    /* UI Elements */
+    --border: 217.2 32.6% 25%;
+    --divider: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 25%;
     --ring: 221 83% 53%;
+    --hover: 217.2 32.6% 17.5%;
+    --active: 217.2 32.6% 22.5%;
+    --disabled: 217.2 32.6% 17.5%;
+    --focus: 221 83% 53%;
   }
 }
 
@@ -118,6 +188,6 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-text-primary antialiased;
   }
 }

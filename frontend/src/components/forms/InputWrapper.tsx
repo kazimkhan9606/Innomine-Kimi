@@ -16,17 +16,17 @@ export const InputWrapper = React.forwardRef<HTMLDivElement, InputWrapperProps>(
         {label && (
           <label
             htmlFor={id}
-            className="block text-sm font-medium text-slate-900"
+            className="block text-sm font-medium text-text-primary"
           >
             {label}
           </label>
         )}
         {children}
         {error && (
-          <p className="text-sm font-medium text-red-500 mt-1">{error}</p>
+          <p className="text-sm font-medium text-danger mt-1">{error}</p>
         )}
         {!error && helperText && (
-          <p className="text-sm text-slate-500 mt-1">{helperText}</p>
+          <p className="text-sm text-text-muted mt-1">{helperText}</p>
         )}
       </div>
     )

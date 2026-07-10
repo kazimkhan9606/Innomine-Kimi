@@ -27,7 +27,7 @@ export function ScrollArea({
       className={cn(
         "relative",
         overflowClass[orientation],
-        "scrollbar-thin scrollbar-thumb-slate-300 dark:scrollbar-thumb-slate-700 scrollbar-track-transparent",
+        "scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent",
         className
       )}
       style={{ maxHeight, ...style }}

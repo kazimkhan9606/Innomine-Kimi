@@ -612,3 +612,1759 @@ Do not rush.
 Think before implementing.
 
 Quality is more important than speed.
+
+# INNOMINE — STAGE 2C
+# FINAL DESIGN SYSTEM POLISH & PRODUCTION READINESS
+
+You are continuing development of Innomine.
+
+Innomine is NOT a generic e-commerce platform.
+
+It is a premium marketplace dedicated exclusively to innovative physical products, hardware startups, AI devices, robotics, IoT, sustainability technologies, university research commercialization, engineering inventions, and breakthrough consumer technology.
+
+Stage 1 (Project Foundation), Stage 2A (Design Foundation), and Stage 2B (Reusable Components) have already been completed successfully.
+
+DO NOT redesign the website.
+
+DO NOT rebuild components.
+
+DO NOT change branding.
+
+DO NOT introduce unnecessary features.
+
+Your only objective is to polish, stabilize and productionize the existing design system so Stage 3 can focus entirely on building the actual product.
+
+==================================================
+PRIMARY OBJECTIVE
+==================================================
+
+Create a production-ready design system.
+
+Every reusable component should look polished, feel consistent, and be scalable for the entire platform.
+
+This is the LAST design-system stage.
+
+After this, the design system is considered frozen.
+
+==================================================
+KEEP THE MAIN PRODUCT VISION
+==================================================
+
+While polishing the design system, always remember what Innomine is.
+
+Every design decision should support:
+
+• premium engineering products
+• futuristic hardware
+• startup innovation
+• robotics
+• AI devices
+• sustainability
+• clean Scandinavian/Japanese minimalism
+• Apple-level polish
+• Notion clarity
+• Linear consistency
+• Stripe professionalism
+
+Avoid looking like:
+
+❌ Amazon
+❌ Alibaba
+❌ Temu
+❌ Generic Bootstrap template
+❌ Material UI demo
+
+Instead target:
+
+✓ Apple
+✓ Linear
+✓ Stripe
+✓ Arc Browser
+✓ Vercel
+✓ Notion
+✓ Framer
+
+==================================================
+STAGE 2C TASKS
+==================================================
+
+-------------------------
+1. Typography Polish
+-------------------------
+
+Review the complete typography hierarchy.
+
+Improve
+
+• font sizes
+• font weights
+• spacing
+• line heights
+• hierarchy
+• readability
+
+Typography should include:
+
+Display XL
+
+Display L
+
+H1
+
+H2
+
+H3
+
+H4
+
+Body Large
+
+Body Medium
+
+Body Small
+
+Caption
+
+Label
+
+Button Text
+
+Code
+
+Improve readability without making the interface heavier.
+
+------------------------------------------------
+
+2. Improve Text Contrast
+
+Current muted text and placeholders are too light.
+
+Improve semantic text colors.
+
+Establish hierarchy.
+
+Primary Text
+
+Secondary Text
+
+Muted Text
+
+Placeholder
+
+Disabled
+
+Ensure accessibility.
+
+------------------------------------------------
+
+3. Final Semantic Color Tokens
+
+Replace scattered colors with reusable semantic tokens.
+
+Create final tokens for
+
+Primary
+
+Secondary
+
+Accent
+
+Background
+
+Surface
+
+Card
+
+Border
+
+Divider
+
+Success
+
+Warning
+
+Danger
+
+Info
+
+Hover
+
+Active
+
+Disabled
+
+Focus
+
+Dark Mode equivalents
+
+All components must consume these tokens.
+
+------------------------------------------------
+
+4. Standardize Spacing
+
+Review every component.
+
+Use one spacing system only.
+
+Examples
+
+4
+
+8
+
+12
+
+16
+
+20
+
+24
+
+32
+
+40
+
+48
+
+64
+
+Remove inconsistent spacing.
+
+------------------------------------------------
+
+5. Border Radius
+
+Create one reusable radius system.
+
+Small
+
+Medium
+
+Large
+
+Extra Large
+
+Use consistently across
+
+Cards
+
+Buttons
+
+Inputs
+
+Badges
+
+Dialogs
+
+Dropdowns
+
+------------------------------------------------
+
+6. Elevation
+
+Create a consistent shadow system.
+
+Surface
+
+Raised
+
+Floating
+
+Modal
+
+Popover
+
+Dropdown
+
+No random shadows.
+
+------------------------------------------------
+
+7. Component Review
+
+Audit every reusable component.
+
+Buttons
+
+Inputs
+
+Textarea
+
+Checkbox
+
+Switch
+
+Tabs
+
+Cards
+
+Marketplace Card
+
+Creator Card
+
+Category Card
+
+Badges
+
+Alerts
+
+Feedback
+
+Loading
+
+Typography
+
+Review
+
+spacing
+
+alignment
+
+hover
+
+focus
+
+disabled
+
+sizes
+
+consistency
+
+------------------------------------------------
+
+8. Forms
+
+Improve
+
+Placeholder contrast
+
+Input spacing
+
+Focus state
+
+Validation state
+
+Disabled state
+
+Error state
+
+Maintain existing API.
+
+------------------------------------------------
+
+9. Marketplace Components
+
+Improve visual hierarchy only.
+
+Do NOT redesign.
+
+Review
+
+Product Card
+
+Category Card
+
+Creator Card
+
+Ratings
+
+Prices
+
+Discounts
+
+Badges
+
+Verification chips
+
+Spacing
+
+Image ratio
+
+Typography
+
+------------------------------------------------
+
+10. Typography Showcase
+
+Expand documentation.
+
+Display every text style.
+
+Display XL
+
+Display L
+
+H1
+
+H2
+
+H3
+
+H4
+
+Body
+
+Caption
+
+Label
+
+Code
+
+Include
+
+font size
+
+weight
+
+line height
+
+recommended usage
+
+------------------------------------------------
+
+11. UI Showcase (/ui)
+
+Convert the current page into a polished internal documentation page.
+
+Organize sections.
+
+Buttons
+
+Forms
+
+Marketplace
+
+Typography
+
+Feedback
+
+Cards
+
+Badges
+
+Loading
+
+Icons
+
+Spacing
+
+Color Tokens
+
+Use consistent spacing.
+
+------------------------------------------------
+
+12. Accessibility
+
+Verify
+
+Keyboard navigation
+
+Focus rings
+
+ARIA
+
+Contrast
+
+Hover
+
+Disabled
+
+Tab order
+
+WCAG-friendly colors
+
+------------------------------------------------
+
+13. Motion
+
+Keep motion subtle.
+
+Hover
+
+Button
+
+Card
+
+Fade
+
+Loading
+
+No flashy animations.
+
+------------------------------------------------
+
+14. Responsive
+
+Verify every component.
+
+Mobile
+
+Tablet
+
+Laptop
+
+Desktop
+
+Ultra-wide
+
+No overflow.
+
+No broken layouts.
+
+------------------------------------------------
+
+15. Dark Mode
+
+Verify every reusable component.
+
+Correct colors.
+
+Correct contrast.
+
+Correct shadows.
+
+Correct surfaces.
+
+------------------------------------------------
+
+16. Cleanup
+
+Remove
+
+dead code
+
+duplicate styles
+
+unused utilities
+
+unused tokens
+
+temporary styles
+
+development placeholders
+
+==================================================
+DO NOT
+==================================================
+
+Do NOT redesign the homepage.
+
+Do NOT modify Stage 3.
+
+Do NOT build new pages.
+
+Do NOT add new business features.
+
+Do NOT modify routing.
+
+Do NOT change branding.
+
+Do NOT create unnecessary animations.
+
+Do NOT change APIs.
+
+Focus only on polishing existing reusable components.
+
+==================================================
+FINAL VALIDATION
+==================================================
+
+Before completion verify:
+
+✓ No React warnings
+
+✓ No hydration warnings
+
+✓ No duplicate key warnings
+
+✓ No ESLint errors
+
+✓ No TypeScript errors
+
+✓ No console errors
+
+✓ No broken routes
+
+✓ Build passes
+
+✓ Home page still works
+
+✓ About page works
+
+✓ Guidelines page works
+
+✓ Terms page works
+
+✓ UI page works
+
+✓ Components remain reusable
+
+==================================================
+DELIVERABLES
+==================================================
+
+Provide a detailed completion report containing:
+
+1. Executive Summary
+
+2. Files Modified
+
+3. Typography Improvements
+
+4. Color Token Improvements
+
+5. Component Improvements
+
+6. Accessibility Improvements
+
+7. Responsive Verification
+
+8. Dark Mode Verification
+
+9. Performance Notes
+
+10. Cleanup Performed
+
+11. Remaining Minor Issues (if any)
+
+12. Production Readiness Score (/10)
+
+13. Confirmation that Stage 2 is COMPLETE.
+
+==================================================
+IMPORTANT
+==================================================
+
+This is the FINAL design-system phase.
+
+After completion, treat the design system as frozen.
+
+Future work must focus on building the actual Innomine platform:
+
+• Marketplace
+• Product pages
+• Creator profiles
+• Authentication
+• User dashboard
+• Innovator dashboard
+• Admin panel
+• Reels feed
+• Search
+• Categories
+• Checkout
+• Payments
+• Verification system
+• Messaging
+• Notifications
+• AI-powered discovery
+
+Do not continue improving the design system beyond this stage unless a critical issue is discovered.
+
+The goal is to leave Stage 2 with a stable, scalable, production-quality UI foundation ready for rapid feature development in Stage 3.
+
+# STAGE 2D — COMPLETE FRONTEND IMPLEMENTATION & PROJECT STABILIZATION (MASTER PROMPT)
+
+You are continuing development of **Innomine**, a premium marketplace dedicated exclusively to innovative physical products.
+
+This is **Stage 2D**.
+
+Read these instructions carefully before making ANY changes.
+
+────────────────────────────────────────
+PROJECT CONTEXT
+────────────────────────────────────────
+
+Stage 1 is COMPLETE.
+
+Stage 2A is COMPLETE.
+
+Stage 2B is COMPLETE.
+
+Stage 2C is COMPLETE.
+
+The existing project already contains:
+
+• Homepage
+• Navbar
+• Footer
+• Static pages
+• Design System
+• Typography System
+• Color Tokens
+• Buttons
+• Forms
+• Marketplace Components
+• Feedback Components
+• UI Showcase
+• Reusable UI Components
+• Routing Foundation
+
+These are considered LOCKED.
+
+DO NOT redesign them.
+
+DO NOT replace them.
+
+DO NOT simplify them.
+
+DO NOT remove any completed work.
+
+DO NOT change the overall visual language.
+
+The existing Apple × Linear × Stripe inspired premium aesthetic MUST remain unchanged.
+
+Your job is to COMPLETE the frontend while preserving everything already built.
+
+────────────────────────────────────────
+PRIMARY OBJECTIVE
+────────────────────────────────────────
+
+Stage 2D converts Innomine into a COMPLETE frontend prototype.
+
+There is NO backend integration.
+
+Everything uses realistic mock data.
+
+At the end of Stage 2D the application should look like a production marketplace whose backend simply hasn't been connected yet.
+
+────────────────────────────────────────
+STEP 1 — COMPLETE PROJECT AUDIT
+────────────────────────────────────────
+
+Before writing ANY code, perform a full audit.
+
+Inspect:
+
+• Folder structure
+• Routing
+• Shared Components
+• Design Tokens
+• Typography
+• Colors
+• Buttons
+• Forms
+• Cards
+• Marketplace Components
+• Images
+• Animations
+• Accessibility
+• Responsiveness
+• Runtime warnings
+• React warnings
+• Next.js warnings
+• Console errors
+• Navigation
+• Dynamic routes
+• Broken imports
+• Duplicate code
+
+Identify every unfinished area.
+
+Fix existing issues BEFORE creating new features.
+
+────────────────────────────────────────
+CRITICAL RULES
+────────────────────────────────────────
+
+1. Never modify completed features unless fixing bugs.
+
+2. Never redesign the UI.
+
+3. Never change spacing without reason.
+
+4. Never change typography hierarchy.
+
+5. Never introduce random colors.
+
+6. Never duplicate reusable components.
+
+7. Use the existing Design System everywhere.
+
+8. Maintain visual consistency.
+
+9. Maintain code quality.
+
+10. Every new page must look like it belongs to Innommine.
+
+────────────────────────────────────────
+FIX ALL EXISTING ISSUES
+────────────────────────────────────────
+
+Eliminate ALL existing problems.
+
+Including:
+
+• Runtime errors
+• Console errors
+• React warnings
+• Duplicate key warnings
+• Framer Motion warnings
+• AnimatePresence warnings
+• Missing image warnings
+• Image optimization warnings
+• Broken imports
+• Broken assets
+• Broken navigation
+• Internal Server Errors
+• 404 pages
+• Hydration mismatches
+• Missing routes
+• Layout inconsistencies
+• Overflow issues
+• Responsive bugs
+
+Nothing should be ignored.
+
+If a warning appears repeatedly, investigate the root cause and permanently fix it.
+
+────────────────────────────────────────
+IMAGE SYSTEM
+────────────────────────────────────────
+
+Audit every image.
+
+Fix:
+
+• Broken URLs
+• Missing images
+• Incorrect aspect ratios
+• Missing alt text
+• Missing sizes attribute
+• Next/Image warnings
+• Layout shift
+• Lazy loading issues
+
+Verify image optimization.
+
+Remove every image-related warning.
+
+────────────────────────────────────────
+ROUTING
+────────────────────────────────────────
+
+Every route must function correctly.
+
+No page should return:
+
+404
+
+500
+
+Internal Server Error
+
+Broken Navigation
+
+Broken Dynamic Route
+
+Broken Link
+
+Verify:
+
+Navbar
+
+Footer
+
+Cards
+
+Categories
+
+Buttons
+
+Creator links
+
+Product links
+
+Everything must navigate correctly.
+
+────────────────────────────────────────
+REMOVE PLACEHOLDERS
+────────────────────────────────────────
+
+Delete every placeholder.
+
+Examples:
+
+Coming Soon
+
+Coming in Stage 2B
+
+Placeholder
+
+TODO
+
+Under Construction
+
+Replace them with complete frontend implementations.
+
+────────────────────────────────────────
+EXPLORE PAGE
+────────────────────────────────────────
+
+Build a complete Explore experience.
+
+Include:
+
+• Hero Banner
+• Search
+• Featured Products
+• Trending Products
+• Editor Picks
+• Recently Launched
+• Recommended
+• Popular Categories
+• Filter Sidebar
+• Sort Dropdown
+• Product Grid
+• Pagination or Infinite Loading
+
+Use realistic mock data.
+
+Minimum:
+
+24 realistic hardware products.
+
+────────────────────────────────────────
+CATEGORIES
+────────────────────────────────────────
+
+Build a complete Categories section.
+
+Include:
+
+Technology
+
+AI
+
+Robotics
+
+IoT
+
+Healthcare
+
+Agriculture
+
+Energy
+
+Consumer Electronics
+
+Wearables
+
+Industrial
+
+Education
+
+Automotive
+
+Smart Home
+
+Each category contains products.
+
+Each category has its own page.
+
+────────────────────────────────────────
+DYNAMIC CATEGORY ROUTES
+────────────────────────────────────────
+
+Implement
+
+/category/[slug]
+
+Every category must render correctly.
+
+No broken routes.
+
+No 404s.
+
+────────────────────────────────────────
+PRODUCT DETAILS PAGE
+────────────────────────────────────────
+
+Build a premium product page.
+
+Include:
+
+• Gallery
+• Multiple Images
+• Zoom
+• Product Title
+• Creator
+• Verified Badge
+• Category
+• Pricing
+• Discount
+• Rating
+• Specifications
+• Description
+• Features
+• Technical Details
+• Reviews
+• Wishlist
+• Share
+• Add to Cart
+• Buy Now
+• Related Products
+
+Everything uses mock data.
+
+────────────────────────────────────────
+INNOVATORS PAGE
+────────────────────────────────────────
+
+Replace placeholder.
+
+Include:
+
+• Search
+• Filters
+• Verified Badge
+• Creator Cards
+• Followers
+• Products
+• Ratings
+• Achievements
+• Pagination
+
+────────────────────────────────────────
+CREATOR PROFILE
+────────────────────────────────────────
+
+Each creator profile should include:
+
+Hero
+
+Avatar
+
+Bio
+
+Achievements
+
+Followers
+
+Following
+
+Products
+
+Gallery
+
+Reviews
+
+Social Links
+
+Verification Status
+
+────────────────────────────────────────
+INNOVATION FEED
+────────────────────────────────────────
+
+Create a Product Hunt inspired feed.
+
+Include:
+
+Launch Posts
+
+Creator Information
+
+Product Images
+
+Likes
+
+Bookmarks
+
+Comments
+
+Verification Badge
+
+Trending Badge
+
+Infinite Scroll
+
+Everything uses mock data.
+
+────────────────────────────────────────
+SEARCH
+────────────────────────────────────────
+
+Implement frontend search.
+
+Search should filter:
+
+Products
+
+Categories
+
+Innovators
+
+Feed
+
+Use mock datasets only.
+
+────────────────────────────────────────
+FILTERS
+────────────────────────────────────────
+
+Implement:
+
+Category
+
+Price
+
+Availability
+
+Verified
+
+Rating
+
+Newest
+
+Trending
+
+Popular
+
+Everything works using frontend state.
+
+────────────────────────────────────────
+RESPONSIVENESS
+────────────────────────────────────────
+
+Audit every page.
+
+Verify:
+
+Desktop
+
+Laptop
+
+Tablet
+
+Mobile
+
+Ultra-wide
+
+Fix:
+
+Spacing
+
+Wrapping
+
+Overflow
+
+Buttons
+
+Navigation
+
+Cards
+
+Forms
+
+Images
+
+Typography
+
+────────────────────────────────────────
+ACCESSIBILITY
+────────────────────────────────────────
+
+Verify:
+
+Keyboard Navigation
+
+ARIA Labels
+
+Focus States
+
+Semantic HTML
+
+Heading Hierarchy
+
+Color Contrast
+
+Accessible Forms
+
+Accessible Buttons
+
+────────────────────────────────────────
+ANIMATIONS
+────────────────────────────────────────
+
+Use only subtle animations.
+
+Maintain premium quality.
+
+Avoid excessive movement.
+
+Reuse existing animation patterns.
+
+────────────────────────────────────────
+PERFORMANCE
+────────────────────────────────────────
+
+Optimize:
+
+Image Loading
+
+Lazy Loading
+
+Component Rendering
+
+Reusable Components
+
+Memoization where necessary
+
+Avoid unnecessary rerenders.
+
+────────────────────────────────────────
+MOCK DATA
+────────────────────────────────────────
+
+Create reusable mock datasets.
+
+Suggested files:
+
+products.ts
+
+categories.ts
+
+innovators.ts
+
+feed.ts
+
+reviews.ts
+
+Do NOT hardcode data inside components.
+
+────────────────────────────────────────
+CODE QUALITY
+────────────────────────────────────────
+
+Refactor duplicated code.
+
+Improve maintainability.
+
+Maintain folder architecture.
+
+Avoid unnecessary complexity.
+
+────────────────────────────────────────
+DESIGN CONSISTENCY
+────────────────────────────────────────
+
+Every page MUST use:
+
+Existing Typography
+
+Existing Colors
+
+Existing Shadows
+
+Existing Border Radius
+
+Existing Buttons
+
+Existing Cards
+
+Existing Forms
+
+Existing Feedback Components
+
+Existing Design Tokens
+
+Nothing should visually feel different.
+
+────────────────────────────────────────
+FINAL VALIDATION
+────────────────────────────────────────
+
+Before considering Stage 2D complete, perform a complete project-wide verification.
+
+Confirm that:
+
+✓ No runtime errors remain.
+
+✓ No console warnings remain.
+
+✓ No React warnings remain.
+
+✓ No Framer Motion warnings remain.
+
+✓ No image warnings remain.
+
+✓ No placeholder pages remain.
+
+✓ No broken routes remain.
+
+✓ No Internal Server Errors remain.
+
+✓ No broken images remain.
+
+✓ No duplicate components remain.
+
+✓ No accessibility regressions remain.
+
+✓ No responsive issues remain.
+
+✓ Every page follows the Design System.
+
+✓ Every navigation link works.
+
+✓ Every card works.
+
+✓ Every creator profile works.
+
+✓ Every category page works.
+
+✓ Every product page works.
+
+✓ Every mock dataset works.
+
+✓ The application feels like a complete production-ready marketplace frontend.
+
+────────────────────────────────────────
+IMPORTANT
+────────────────────────────────────────
+
+Do NOT stop after implementing only the requested features.
+
+Think like a Senior Frontend Architect.
+
+Continuously audit your own work while implementing.
+
+If you discover any inconsistency, bug, code smell, visual issue, routing issue, responsiveness issue, accessibility issue, performance issue, or design inconsistency, fix it proactively without waiting for additional instructions.
+
+The goal is that Stage 2D becomes the FINAL frontend milestone before backend integration. When this stage is complete, the frontend should require no structural redesign—only replacement of mock data with real APIs, authentication, database, payments, and other backend services in the next stages.
+
+You are performing the FINAL stabilization and completion of Stage 2D for the Innomine frontend.
+
+This is NOT a redesign.
+This is NOT a refactor.
+This is NOT Stage 3.
+
+Your objective is to make the entire frontend production-quality, eliminate every runtime error, complete every unfinished feature, and preserve the existing design system exactly as implemented.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+IMPORTANT RULES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DO NOT redesign anything.
+
+DO NOT modify typography.
+
+DO NOT modify spacing.
+
+DO NOT modify colors.
+
+DO NOT modify the design system.
+
+DO NOT remove components.
+
+DO NOT change layouts.
+
+DO NOT break existing working pages.
+
+Only fix bugs and complete missing functionality.
+
+Before changing any file, inspect whether it already works.
+Modify only what is necessary.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. NEXT.JS 16 DYNAMIC ROUTE FIXES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The project currently throws errors such as:
+
+"A param property was accessed directly with params.slug."
+
+"searchParams is a Promise."
+
+These errors exist across multiple routes.
+
+Fix EVERY route to use the official Next.js 16 API.
+
+Audit:
+
+app/product/[id]
+
+app/category/[slug]
+
+app/innovator/[id]
+
+app/explore
+
+Any other page using params or searchParams.
+
+Remove ALL runtime warnings.
+
+Browser console must become clean.
+
+Terminal must become clean.
+
+npm run dev must show zero runtime errors.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2. PRODUCT ROUTE FIX
+━━━━━━━━━━━━━━━━━━━━━━
+
+Currently
+
+/product/1
+
+returns 404.
+
+Investigate why.
+
+Verify:
+
+product ids
+
+slug generation
+
+lookup logic
+
+dynamic routing
+
+Ensure every product card opens the correct page.
+
+Every product must display:
+
+gallery
+
+title
+
+creator
+
+price
+
+description
+
+specifications
+
+reviews
+
+related products
+
+404 should only appear for truly invalid ids.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3. CATEGORY ROUTES
+━━━━━━━━━━━━━━━━━━━━━━
+
+Currently category pages crash.
+
+Fix dynamic category routing.
+
+Verify every category slug.
+
+Examples:
+
+AI
+
+Robotics
+
+IoT
+
+Smart Home
+
+Wearables
+
+Healthcare
+
+Energy
+
+Consumer Electronics
+
+Every category page must:
+
+load
+
+display products
+
+show title
+
+show description
+
+have no runtime errors
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+4. SEARCH
+━━━━━━━━━━━━━━━━━━━━━━
+
+Search currently does not filter.
+
+Implement real search.
+
+Search must filter by:
+
+product title
+
+description
+
+creator
+
+category
+
+keywords
+
+URL Search Params must work.
+
+Searching:
+
+AI
+
+Robot
+
+Headset
+
+Ring
+
+Drone
+
+Keyboard
+
+must return different results.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+5. FILTERS
+━━━━━━━━━━━━━━━━━━━━━━
+
+Filters were promised but do not exist.
+
+Implement fully functional filters.
+
+Include:
+
+Category
+
+Price
+
+Verified Creator
+
+Newest
+
+Highest Rated
+
+Most Popular
+
+Filters must update UI immediately.
+
+Filters must sync with URL parameters.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+6. MOCK DATABASE
+━━━━━━━━━━━━━━━━━━━━━━
+
+Documentation claims:
+
+24+ products
+
+Currently only ~8 appear.
+
+Populate the mock database completely.
+
+Minimum:
+
+24 products
+
+10 creators
+
+10+ categories
+
+Every creator owns products.
+
+Every category contains products.
+
+No duplicate ids.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+7. PRODUCT IMAGES
+━━━━━━━━━━━━━━━━━━━━━━
+
+Several cards show broken images.
+
+Audit every image.
+
+Replace broken URLs.
+
+Use working high-quality royalty-free images.
+
+No missing thumbnails.
+
+No layout shifts.
+
+No broken icons.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+8. MOBILE NAVIGATION
+━━━━━━━━━━━━━━━━━━━━━━
+
+Current hamburger menu:
+
+opens grey overlay
+
+menu unusable
+
+Fix mobile navigation.
+
+Requirements:
+
+smooth animation
+
+close on outside click
+
+ESC closes
+
+focus trap
+
+scroll lock
+
+accessible
+
+No grey frozen screen.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+9. FEED
+━━━━━━━━━━━━━━━━━━━━━━
+
+Current feed is image-only.
+
+Improve experience without redesign.
+
+Maintain card design.
+
+Option A:
+
+light autoplay videos
+
+OR
+
+Option B:
+
+image reels with progress interaction
+
+Must feel like an innovation feed.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+10. RESPONSIVE AUDIT
+━━━━━━━━━━━━━━━━━━━━━━
+
+Audit:
+
+320px
+
+375px
+
+390px
+
+768px
+
+1024px
+
+1440px
+
+No overflow.
+
+No clipped text.
+
+No broken cards.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+11. QA
+━━━━━━━━━━━━━━━━━━━━━━
+
+Run:
+
+npm run lint
+
+npm run type-check
+
+npm run build
+
+Fix every issue.
+
+Remove:
+
+console warnings
+
+hydration warnings
+
+React warnings
+
+Next warnings
+
+Image warnings
+
+Accessibility warnings
+
+TypeScript warnings
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+12. FINAL VERIFICATION
+━━━━━━━━━━━━━━━━━━━━━━
+
+Before finishing verify:
+
+✔ Explore
+
+✔ Categories
+
+✔ Category Details
+
+✔ Product Details
+
+✔ Innovators
+
+✔ Innovator Profiles
+
+✔ Feed
+
+✔ About
+
+✔ Navbar
+
+✔ Footer
+
+✔ Mobile Navigation
+
+✔ Search
+
+✔ Filters
+
+✔ Dynamic Routes
+
+✔ Images
+
+✔ Mock Data
+
+✔ Responsive
+
+✔ Accessibility
+
+✔ Build
+
+Do not mark the task complete until every item passes.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FINAL OUTPUT
+━━━━━━━━━━━━━━━━━━━━━━
+
+Return:
+
+1. Files modified
+
+2. Bugs fixed
+
+3. Features completed
+
+4. Remaining issues (if any)
+
+5. Screenshots or verification proving:
+
+- dynamic routing works
+- product pages work
+- category pages work
+- search works
+- filters work
+- mobile menu works
+- build succeeds
+
+Do NOT claim success unless every verification has been completed.

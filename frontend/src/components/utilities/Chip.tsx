@@ -20,14 +20,14 @@ export function Chip({
   return (
     <div
       className={cn(
-        "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 border border-transparent transition-colors",
+        "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm bg-surface text-text-primary border border-transparent transition-colors",
         disabled && "opacity-50 cursor-not-allowed",
-        !disabled && onRemove && "hover:bg-slate-200 dark:hover:bg-slate-700",
+        !disabled && onRemove && "hover:bg-hover",
         className
       )}
       {...props}
     >
-      {icon && <span className="flex-shrink-0 text-slate-500">{icon}</span>}
+      {icon && <span className="flex-shrink-0 text-text-muted">{icon}</span>}
       <span className="font-medium">{children}</span>
       {onRemove && (
         <button
@@ -37,7 +37,7 @@ export function Chip({
             if (!disabled) onRemove();
           }}
           disabled={disabled}
-          className="ml-1 p-0.5 -mr-1 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-300 dark:hover:text-slate-200 dark:hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-400"
+          className="ml-1 p-0.5 -mr-1 rounded-full text-text-muted hover:text-text-primary hover:bg-hover focus:outline-none focus:ring-2 focus:ring-ring"
           aria-label="Remove"
         >
           <X className="w-3.5 h-3.5" />

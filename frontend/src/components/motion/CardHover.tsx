@@ -17,7 +17,7 @@ export const CardHover: React.FC<CardHoverProps> = ({
   return (
     <motion.div
       whileHover={{ y: -4, transition: { duration: 0.25, ease: "easeOut" } }}
-      className={cn("transition-shadow hover:shadow-lg rounded-2xl", className)}
+      className={cn("transition-shadow hover:shadow-raised rounded-xl", className)}
       {...props}
     >
       {children}

@@ -16,7 +16,8 @@ export const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputPro
     { className, label, helperText, error, id, containerClassName, ...props },
     ref
   ) => {
-    const inputId = id || React.useId()
+    const generatedId = React.useId();
+    const inputId = id || generatedId
     const [showPassword, setShowPassword] = React.useState(false)
 
     return (
@@ -33,15 +34,15 @@ export const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputPro
             ref={ref}
             type={showPassword ? "text" : "password"}
             className={cn(
-              "flex h-11 w-full rounded-xl border border-slate-200 bg-white pl-3 pr-10 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] disabled:cursor-not-allowed disabled:opacity-50 transition-colors",
-              error && "border-red-500 focus-visible:ring-red-500",
+              "flex h-11 w-full rounded-md border border-input bg-background pl-3 pr-10 py-2 text-sm text-text-primary placeholder:text-text-placeholder focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 transition-colors",
+              error && "border-danger focus-visible:ring-danger",
               className
             )}
             {...props}
           />
           <button
             type="button"
-            className="absolute inset-y-0 right-0 flex items-center pr-3 text-slate-400 hover:text-slate-600 focus:outline-none"
+            className="absolute inset-y-0 right-0 flex items-center pr-3 text-text-muted hover:text-text-primary focus:outline-none"
             onClick={() => setShowPassword(!showPassword)}
             aria-label={showPassword ? "Hide password" : "Show password"}
           >

@@ -19,7 +19,7 @@ export function Divider({
       <div
         role="separator"
         className={cn(
-          "w-px h-full bg-slate-200 dark:bg-slate-800",
+          "w-px h-full bg-divider",
           className
         )}
       />
@@ -29,13 +29,13 @@ export function Divider({
   if (label) {
     return (
       <div className={cn("flex items-center", className)}>
-        <div className={cn("h-px bg-slate-200 dark:bg-slate-800", 
+        <div className={cn("h-px bg-divider", 
           labelPosition === "start" ? "w-8" : "flex-1"
         )} />
-        <span className="px-3 text-xs font-medium text-slate-500 uppercase tracking-wider">
+        <span className="px-3 text-xs font-medium text-text-muted uppercase tracking-wider">
           {label}
         </span>
-        <div className={cn("h-px bg-slate-200 dark:bg-slate-800", 
+        <div className={cn("h-px bg-divider", 
           labelPosition === "end" ? "w-8" : "flex-1"
         )} />
       </div>
@@ -46,7 +46,7 @@ export function Divider({
     <div
       role="separator"
       className={cn(
-        "h-px w-full bg-slate-200 dark:bg-slate-800",
+        "h-px w-full bg-divider",
         className
       )}
     />

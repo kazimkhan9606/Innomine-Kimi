@@ -30,22 +30,22 @@ export function Avatar({
   };
 
   const statusColors = {
-    online: "bg-emerald-500",
-    offline: "bg-slate-400",
-    busy: "bg-red-500",
-    away: "bg-amber-500",
+    online: "bg-success",
+    offline: "bg-text-muted",
+    busy: "bg-danger",
+    away: "bg-warning",
   };
 
   const renderFallback = () => {
     if (initials) {
       return (
-        <div className="flex w-full h-full items-center justify-center bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300 font-medium">
+        <div className="flex w-full h-full items-center justify-center bg-surface text-text-primary font-medium">
           {initials.substring(0, 2).toUpperCase()}
         </div>
       );
     }
     return (
-      <div className="flex w-full h-full items-center justify-center bg-slate-100 text-slate-400 dark:bg-slate-800 dark:text-slate-500">
+      <div className="flex w-full h-full items-center justify-center bg-surface text-text-muted">
         <User className="w-1/2 h-1/2" />
       </div>
     );
@@ -53,7 +53,7 @@ export function Avatar({
 
   return (
     <div className={cn("relative inline-block rounded-full", sizes[size], className)}>
-      <div className="w-full h-full overflow-hidden rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+      <div className="w-full h-full overflow-hidden rounded-full border border-border bg-background">
         {src && !imgError ? (
           <img
             src={src}
@@ -69,7 +69,7 @@ export function Avatar({
       {status && (
         <span
           className={cn(
-            "absolute bottom-0 right-0 block rounded-full ring-2 ring-white dark:ring-slate-900",
+            "absolute bottom-0 right-0 block rounded-full ring-2 ring-background",
             statusColors[status],
             size === "sm" ? "w-2 h-2" : size === "2xl" ? "w-5 h-5 ring-4" : "w-3 h-3 ring-2"
           )}

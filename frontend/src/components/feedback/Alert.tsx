@@ -12,10 +12,10 @@ export interface AlertProps {
 }
 
 const variantStyles: Record<AlertVariant, string> = {
-  success: "bg-emerald-50 text-emerald-800 border-emerald-200 dark:bg-emerald-950/50 dark:text-emerald-300 dark:border-emerald-800",
-  warning: "bg-amber-50 text-amber-800 border-amber-200 dark:bg-amber-950/50 dark:text-amber-300 dark:border-amber-800",
-  error: "bg-red-50 text-red-800 border-red-200 dark:bg-red-950/50 dark:text-red-300 dark:border-red-800",
-  info: "bg-blue-50 text-blue-800 border-blue-200 dark:bg-blue-950/50 dark:text-blue-300 dark:border-blue-800",
+  success: "bg-success/10 text-success border-success/20",
+  warning: "bg-warning/10 text-warning border-warning/20",
+  error: "bg-danger/10 text-danger border-danger/20",
+  info: "bg-info/10 text-info border-info/20",
 };
 
 const variantIcons: Record<AlertVariant, React.ElementType> = {

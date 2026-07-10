@@ -18,13 +18,13 @@ export const LoadingOverlay: React.FC<LoadingOverlayProps> = ({
   return (
     <div
       className={cn(
-        "absolute inset-0 z-50 flex flex-col items-center justify-center bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-[inherit]",
+        "absolute inset-0 z-50 flex flex-col items-center justify-center bg-background/80 backdrop-blur-sm rounded-[inherit]",
         className
       )}
     >
-      <LoadingSpinner size="lg" className="text-blue-600 dark:text-blue-500" />
+      <LoadingSpinner size="lg" className="text-primary" />
       {message && (
-        <p className="mt-4 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <p className="mt-4 text-sm font-medium text-text-secondary">
           {message}
         </p>
       )}

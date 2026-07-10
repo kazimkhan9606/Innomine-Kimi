@@ -16,13 +16,13 @@ export function Badge({
 }: BadgeProps) {
   
   const variants = {
-    default: "bg-slate-900 text-white dark:bg-white dark:text-slate-900",
-    secondary: "bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-white",
-    outline: "border border-slate-200 text-slate-900 dark:border-slate-700 dark:text-white",
-    success: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400",
-    warning: "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400",
-    danger: "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400",
-    info: "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400",
+    default: "bg-primary text-primary-foreground",
+    secondary: "bg-secondary text-text-primary",
+    outline: "border border-border text-text-primary",
+    success: "bg-success/10 text-success",
+    warning: "bg-warning/10 text-warning",
+    danger: "bg-danger/10 text-danger",
+    info: "bg-info/10 text-info",
   };
   
   const sizes = {

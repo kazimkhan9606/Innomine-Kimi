@@ -34,8 +34,8 @@ export function StickyHeader({
     <header
       className={cn(
         "sticky top-0 z-40 transition-all duration-200",
-        isSticky && glass && "bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 shadow-sm",
-        isSticky && !glass && "bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm",
+        isSticky && glass && "bg-background/80 backdrop-blur-md border-b border-border/50 shadow-sm",
+        isSticky && !glass && "bg-background border-b border-border shadow-sm",
         !isSticky && "bg-transparent border-transparent",
         className
       )}

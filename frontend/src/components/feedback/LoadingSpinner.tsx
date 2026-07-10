@@ -19,7 +19,7 @@ export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
 }) => {
   return (
     <svg
-      className={cn("animate-spin text-slate-400 dark:text-slate-500", sizeClasses[size], className)}
+      className={cn("animate-spin text-text-muted", sizeClasses[size], className)}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"

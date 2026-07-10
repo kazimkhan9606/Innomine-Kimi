@@ -20,12 +20,12 @@ export const HorizontalProductCard = React.forwardRef<HTMLDivElement, Horizontal
       <div
         ref={ref}
         className={cn(
-          "group flex flex-row overflow-hidden rounded-xl bg-white shadow-sm transition-all hover:shadow-md dark:bg-slate-900 border border-slate-100 dark:border-slate-800",
+          "group flex flex-row overflow-hidden rounded-xl bg-card shadow-surface transition-all hover:shadow-raised border border-border",
           className
         )}
         {...props}
       >
-        <div className="relative h-32 w-32 shrink-0 overflow-hidden bg-slate-100 dark:bg-slate-800 sm:h-40 sm:w-40">
+        <div className="relative h-32 w-32 shrink-0 overflow-hidden bg-surface sm:h-40 sm:w-40">
           <img
             src={imageUrl}
             alt={title}
@@ -34,10 +34,10 @@ export const HorizontalProductCard = React.forwardRef<HTMLDivElement, Horizontal
           />
         </div>
         <div className="flex flex-col flex-1 p-4 sm:p-5">
-          <div className="mb-1 text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+          <div className="mb-1 text-xs font-medium text-text-secondary uppercase tracking-wider">
             {category}
           </div>
-          <h3 className="mb-2 line-clamp-2 text-base sm:text-lg font-medium text-slate-900 dark:text-slate-50 flex-1">
+          <h3 className="mb-2 line-clamp-2 text-base sm:text-lg font-medium text-text-primary flex-1">
             {title}
           </h3>
           {rating !== undefined && (

@@ -10,7 +10,8 @@ export interface SwitchProps
 
 export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
   ({ className, label, description, error, id, ...props }, ref) => {
-    const inputId = id || React.useId()
+    const generatedId = React.useId();
+    const inputId = id || generatedId
 
     return (
       <div className="flex items-center justify-between">
@@ -18,15 +19,15 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
           {label && (
             <label
               htmlFor={inputId}
-              className="text-sm font-medium leading-6 text-slate-900"
+              className="text-sm font-medium leading-6 text-text-primary"
             >
               {label}
             </label>
           )}
           {description && (
-            <span className="text-sm text-slate-500">{description}</span>
+            <span className="text-sm text-text-muted">{description}</span>
           )}
-          {error && <span className="text-sm text-red-500 mt-1">{error}</span>}
+          {error && <span className="text-sm text-danger mt-1">{error}</span>}
         </span>
         <label className="relative inline-flex cursor-pointer items-center ml-4">
           <input
@@ -38,7 +39,7 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
           />
           <div
             className={cn(
-              "h-6 w-11 rounded-full bg-slate-200 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-[#2563EB] peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[#2563EB] peer-focus:ring-offset-2 peer-disabled:cursor-not-allowed peer-disabled:opacity-50",
+              "h-6 w-11 rounded-full bg-surface after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-border after:bg-background after:transition-all after:content-[''] peer-checked:bg-primary peer-checked:after:translate-x-full peer-checked:after:border-background peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-ring peer-focus:ring-offset-2 peer-disabled:cursor-not-allowed peer-disabled:opacity-50",
               className
             )}
           ></div>

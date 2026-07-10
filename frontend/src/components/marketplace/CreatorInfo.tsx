@@ -15,16 +15,16 @@ export const CreatorInfo = React.forwardRef<HTMLDivElement, CreatorInfoProps>(
     return (
       <div ref={ref} className={cn("flex flex-col", className)} {...props}>
         <div className="flex items-center gap-2 mb-1">
-          <h4 className="text-lg font-semibold text-slate-900 dark:text-slate-50">{name}</h4>
+          <h4 className="text-lg font-semibold text-text-primary">{name}</h4>
           {isVerified && <Badge variant="verified">Verified</Badge>}
         </div>
-        <div className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-2">@{handle}</div>
+        <div className="text-sm font-medium text-text-secondary mb-2">@{handle}</div>
         
-        {bio && <p className="text-sm text-slate-600 dark:text-slate-300 line-clamp-2">{bio}</p>}
+        {bio && <p className="text-sm text-text-muted line-clamp-2">{bio}</p>}
         
         {followers !== undefined && (
-          <div className="mt-2 text-sm font-medium text-slate-700 dark:text-slate-300">
-            {followers.toLocaleString()} <span className="font-normal text-slate-500">followers</span>
+          <div className="mt-2 text-sm font-medium text-text-primary">
+            {followers.toLocaleString()} <span className="font-normal text-text-secondary">followers</span>
           </div>
         )}
       </div>

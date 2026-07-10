@@ -20,34 +20,34 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
   return (
     <CardHover
       className={cn(
-        "p-8 rounded-2xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border border-slate-200/50 dark:border-slate-700/50 shadow-sm relative overflow-hidden",
+        "p-8 rounded-xl bg-card/70 backdrop-blur-md border border-border shadow-sm relative overflow-hidden",
         className
       )}
     >
-      <div className="absolute top-0 right-0 p-6 text-6xl text-slate-100 dark:text-slate-800 select-none leading-none opacity-50 font-serif">
-        "
+      <div className="absolute top-0 right-0 p-6 text-6xl text-text-muted select-none leading-none opacity-20 font-serif">
+        &quot;
       </div>
-      <p className="text-lg text-slate-700 dark:text-slate-300 font-medium leading-relaxed mb-8 relative z-10">
-        "{quote}"
+      <p className="text-lg text-text-secondary font-medium leading-relaxed mb-8 relative z-10">
+        &quot;{quote}&quot;
       </p>
       <div className="flex items-center gap-4 relative z-10">
         {authorAvatar ? (
           <img
             src={authorAvatar}
             alt={authorName}
-            className="w-12 h-12 rounded-full object-cover border border-slate-100 dark:border-slate-800"
+            className="w-12 h-12 rounded-full object-cover border border-border"
           />
         ) : (
-          <div className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 font-bold">
+          <div className="w-12 h-12 rounded-full bg-surface flex items-center justify-center text-text-secondary font-bold">
             {authorName.charAt(0)}
           </div>
         )}
         <div>
-          <div className="font-semibold text-slate-900 dark:text-white">
+          <div className="font-semibold text-text-primary">
             {authorName}
           </div>
           {authorRole && (
-            <div className="text-sm text-slate-500 dark:text-slate-400">
+            <div className="text-sm text-text-muted">
               {authorRole}
             </div>
           )}

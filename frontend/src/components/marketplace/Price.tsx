@@ -24,11 +24,11 @@ export const Price = React.forwardRef<HTMLDivElement, PriceProps>(
 
     return (
       <div ref={ref} className={cn("flex items-baseline gap-2", className)} {...props}>
-        <span className={cn("font-medium text-slate-900 dark:text-slate-50", sizes[size])}>
+        <span className={cn("font-medium text-text-primary", sizes[size])}>
           {formatter.format(amount)}
         </span>
         {originalAmount && originalAmount > amount && (
-          <span className="text-sm text-slate-500 line-through dark:text-slate-400">
+          <span className="text-sm text-text-muted line-through">
             {formatter.format(originalAmount)}
           </span>
         )}

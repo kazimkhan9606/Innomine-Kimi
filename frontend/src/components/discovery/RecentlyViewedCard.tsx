@@ -21,12 +21,12 @@ export const RecentlyViewedCard = React.forwardRef<HTMLDivElement, RecentlyViewe
       <div
         ref={ref}
         className={cn(
-          "group block overflow-hidden rounded-xl bg-white shadow-sm transition-all hover:shadow-md dark:bg-slate-900 border border-slate-100 dark:border-slate-800 cursor-pointer w-32 shrink-0 sm:w-40",
+          "group block overflow-hidden rounded-xl bg-card shadow-surface transition-all hover:shadow-raised border border-border cursor-pointer w-32 shrink-0 sm:w-40",
           className
         )}
         {...props}
       >
-        <div className="relative aspect-square w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+        <div className="relative aspect-square w-full overflow-hidden bg-surface">
           <img
             src={imageUrl}
             alt={title}
@@ -35,10 +35,10 @@ export const RecentlyViewedCard = React.forwardRef<HTMLDivElement, RecentlyViewe
           />
         </div>
         <div className="p-3">
-          <h4 className="truncate text-xs font-medium text-slate-900 dark:text-slate-50 mb-1">
+          <h4 className="truncate text-xs font-medium text-text-primary mb-1">
             {title}
           </h4>
-          <p className="text-sm font-semibold text-slate-900 dark:text-slate-50">
+          <p className="text-sm font-semibold text-text-primary">
             {formatter.format(price)}
           </p>
         </div>

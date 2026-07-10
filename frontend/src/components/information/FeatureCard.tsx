@@ -17,14 +17,14 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
   className,
 }) => {
   return (
-    <CardHover className={cn("p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800", className)}>
-      <div className="w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center mb-4">
-        <Icon className="w-6 h-6 text-slate-700 dark:text-slate-300" strokeWidth={1.5} />
+    <CardHover className={cn("p-6 rounded-xl bg-card border border-border", className)}>
+      <div className="w-12 h-12 rounded-lg bg-surface flex items-center justify-center mb-4">
+        <Icon className="w-6 h-6 text-text-secondary" strokeWidth={1.5} />
       </div>
-      <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+      <h3 className="text-lg font-semibold text-text-primary mb-2">
         {title}
       </h3>
-      <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+      <p className="text-text-secondary text-sm leading-relaxed">
         {description}
       </p>
     </CardHover>

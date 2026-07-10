@@ -22,12 +22,12 @@ export const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
       <div
         ref={ref}
         className={cn(
-          "group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-all hover:shadow-md dark:bg-slate-900 dark:hover:bg-slate-800/50 border border-slate-100 dark:border-slate-800",
+          "group flex flex-col overflow-hidden rounded-xl bg-card shadow-surface transition-all hover:shadow-raised border border-border",
           className
         )}
         {...props}
       >
-        <div className="relative aspect-square overflow-hidden bg-slate-100 dark:bg-slate-800">
+        <div className="relative aspect-square overflow-hidden bg-surface">
           <img
             src={imageUrl}
             alt={title}
@@ -39,10 +39,10 @@ export const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
           </div>
         </div>
         <div className="flex flex-col flex-1 p-4">
-          <div className="mb-2 text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+          <div className="mb-2 text-xs font-medium text-text-secondary uppercase tracking-wider">
             {category}
           </div>
-          <h3 className="mb-2 line-clamp-2 text-base font-medium text-slate-900 dark:text-slate-50 flex-1">
+          <h3 className="mb-2 line-clamp-2 text-base font-medium text-text-primary flex-1">
             {title}
           </h3>
           {rating !== undefined && (

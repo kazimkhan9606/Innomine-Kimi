@@ -6,17 +6,17 @@ import { Loader2 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const iconButtonVariants = cva(
-  "inline-flex items-center justify-center rounded-xl text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ring-offset-white active:scale-[0.98]",
+  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ring-offset-background active:scale-[0.98]",
   {
     variants: {
       variant: {
-        primary: "bg-[#111827] text-white hover:bg-slate-800 shadow-sm",
-        secondary: "bg-white text-slate-900 border border-slate-200 hover:bg-slate-50 shadow-sm",
-        accent: "bg-[#2563EB] text-white hover:bg-blue-700 shadow-sm",
-        outline: "border-2 border-[#111827] text-[#111827] hover:bg-slate-100",
-        ghost: "text-slate-700 hover:bg-slate-100 hover:text-slate-900",
-        danger: "bg-red-600 text-white hover:bg-red-700 shadow-sm",
-        success: "bg-emerald-600 text-white hover:bg-emerald-700 shadow-sm",
+        primary: "bg-primary text-primary-foreground hover:opacity-90 shadow-sm",
+        secondary: "bg-secondary text-text-primary border border-border hover:bg-hover shadow-sm",
+        accent: "bg-accent text-primary-foreground hover:opacity-90 shadow-sm",
+        outline: "border-2 border-border text-text-primary hover:bg-hover",
+        ghost: "text-text-primary hover:bg-hover hover:text-text-primary",
+        danger: "bg-danger text-primary-foreground hover:opacity-90 shadow-sm",
+        success: "bg-success text-primary-foreground hover:opacity-90 shadow-sm",
       },
       size: {
         sm: "h-8 w-8",

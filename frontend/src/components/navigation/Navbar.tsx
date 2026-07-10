@@ -44,7 +44,7 @@ export function Navbar() {
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center transform transition-transform group-hover:rotate-12">
                 <span className="text-primary-foreground font-bold text-lg">I</span>
               </div>
-              <span className="text-xl font-bold tracking-tight text-foreground">
+              <span className="text-xl font-bold tracking-tight text-text-primary">
                 Innomine
               </span>
             </Link>
@@ -73,7 +73,7 @@ export function Navbar() {
                     key={item.label}
                     href={item.href}
                     className={`px-4 py-2 text-sm font-medium transition-colors hover:text-primary rounded-md ${
-                      pathname === item.href ? "text-primary bg-primary/10" : "text-muted-foreground"
+                      pathname === item.href ? "text-primary bg-primary/10" : "text-text-secondary"
                     }`}
                   >
                     {item.label}
@@ -87,16 +87,16 @@ export function Navbar() {
           <div className="flex items-center gap-2">
             <div className="hidden md:flex items-center gap-1">
               <Button variant="ghost" size="icon" className="rounded-full">
-                <Search className="w-5 h-5 text-muted-foreground" />
+                <Search className="w-5 h-5 text-text-secondary" />
                 <span className="sr-only">Search</span>
               </Button>
               <ThemeToggle />
               <Button variant="ghost" size="icon" className="rounded-full">
-                <Heart className="w-5 h-5 text-muted-foreground" />
+                <Heart className="w-5 h-5 text-text-secondary" />
                 <span className="sr-only">Wishlist</span>
               </Button>
               <Button variant="ghost" size="icon" className="rounded-full relative">
-                <ShoppingCart className="w-5 h-5 text-muted-foreground" />
+                <ShoppingCart className="w-5 h-5 text-text-secondary" />
                 <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-accent rounded-full"></span>
                 <span className="sr-only">Cart</span>
               </Button>

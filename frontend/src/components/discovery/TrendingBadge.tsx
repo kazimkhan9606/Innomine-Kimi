@@ -13,7 +13,7 @@ export const TrendingBadge = React.forwardRef<HTMLDivElement, TrendingBadgeProps
       <div
         ref={ref}
         className={cn(
-          "inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700 border border-blue-200 dark:bg-blue-900/30 dark:text-blue-400 dark:border-blue-800",
+          "inline-flex items-center gap-1.5 rounded-full bg-accent px-2.5 py-1 text-xs font-semibold text-primary-foreground border border-transparent",
           className
         )}
         {...props}

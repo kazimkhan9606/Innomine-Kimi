@@ -17,13 +17,13 @@ interface TextProps extends React.HTMLAttributes<HTMLParagraphElement | HTMLSpan
 }
 
 const variantClasses: Record<TextVariant, string> = {
-  "subtitle": "text-lg md:text-xl text-slate-700 dark:text-slate-300 font-medium",
-  "body-l": "text-lg text-slate-700 dark:text-slate-300",
-  "body-m": "text-base text-slate-700 dark:text-slate-300",
-  "body-s": "text-sm text-slate-600 dark:text-slate-400",
-  "caption": "text-xs text-slate-500 dark:text-slate-400",
-  "label": "text-sm font-medium text-slate-900 dark:text-white uppercase tracking-wider",
-  "mono": "font-mono text-sm text-slate-800 dark:text-slate-200",
+  "subtitle": "text-lg md:text-xl text-text-secondary font-medium",
+  "body-l": "text-lg text-text-secondary",
+  "body-m": "text-base text-text-secondary",
+  "body-s": "text-sm text-text-secondary",
+  "caption": "text-xs text-text-muted",
+  "label": "text-sm font-medium text-text-primary uppercase tracking-wider",
+  "mono": "font-mono text-sm text-text-primary",
 };
 
 export const Text = React.forwardRef<HTMLParagraphElement, TextProps>(

@@ -30,27 +30,27 @@ export function Breadcrumb({
           return (
             <li key={index} className="flex items-center">
               {isFirst && homeIcon && !item.icon && (
-                <Home className="w-4 h-4 mr-1 sm:mr-2 text-slate-400" />
+                <Home className="w-4 h-4 mr-1 sm:mr-2 text-text-muted" />
               )}
               {item.icon && (
-                <span className="mr-1 sm:mr-2 text-slate-400">{item.icon}</span>
+                <span className="mr-1 sm:mr-2 text-text-muted">{item.icon}</span>
               )}
               
               {item.href && !isLast ? (
                 <Link
                   href={item.href}
-                  className="text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+                  className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
                 >
                   {item.label}
                 </Link>
               ) : (
-                <span className="text-sm font-medium text-slate-900 dark:text-white pointer-events-none">
+                <span className="text-sm font-medium text-text-primary pointer-events-none">
                   {item.label}
                 </span>
               )}
 
               {!isLast && (
-                <ChevronRight className="w-4 h-4 mx-1 sm:mx-2 text-slate-400 flex-shrink-0" />
+                <ChevronRight className="w-4 h-4 mx-1 sm:mx-2 text-text-muted flex-shrink-0" />
               )}
             </li>
           );

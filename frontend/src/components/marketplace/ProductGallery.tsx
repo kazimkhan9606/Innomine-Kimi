@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -21,7 +22,7 @@ export const ProductGallery = React.forwardRef<HTMLDivElement, ProductGalleryPro
 
     if (!images || images.length === 0) {
       return (
-        <div className={cn("aspect-square rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400", className)} {...props}>
+        <div className={cn("aspect-square rounded-xl bg-surface flex items-center justify-center text-text-muted", className)} {...props}>
           No images available
         </div>
       );
@@ -29,7 +30,7 @@ export const ProductGallery = React.forwardRef<HTMLDivElement, ProductGalleryPro
 
     return (
       <div ref={ref} className={cn("flex flex-col gap-4", className)} {...props}>
-        <div className="group relative aspect-square overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-800">
+        <div className="group relative aspect-square overflow-hidden rounded-xl bg-surface">
           <img
             src={images[activeIndex]}
             alt={`${alt} ${activeIndex + 1}`}
@@ -40,14 +41,14 @@ export const ProductGallery = React.forwardRef<HTMLDivElement, ProductGalleryPro
             <>
               <button
                 onClick={prevImage}
-                className="absolute left-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/80 text-slate-800 opacity-0 shadow-sm backdrop-blur-sm transition-all group-hover:opacity-100 hover:bg-white dark:bg-slate-900/80 dark:text-slate-200 dark:hover:bg-slate-900"
+                className="absolute left-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-background/80 text-text-primary opacity-0 shadow-surface backdrop-blur-sm transition-all group-hover:opacity-100 hover:bg-hover"
                 aria-label="Previous image"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
               <button
                 onClick={nextImage}
-                className="absolute right-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/80 text-slate-800 opacity-0 shadow-sm backdrop-blur-sm transition-all group-hover:opacity-100 hover:bg-white dark:bg-slate-900/80 dark:text-slate-200 dark:hover:bg-slate-900"
+                className="absolute right-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-background/80 text-text-primary opacity-0 shadow-surface backdrop-blur-sm transition-all group-hover:opacity-100 hover:bg-hover"
                 aria-label="Next image"
               >
                 <ChevronRight className="h-5 w-5" />
@@ -65,7 +66,7 @@ export const ProductGallery = React.forwardRef<HTMLDivElement, ProductGalleryPro
                 className={cn(
                   "relative h-20 w-20 shrink-0 overflow-hidden rounded-xl border-2 transition-all",
                   activeIndex === idx
-                    ? "border-blue-600 dark:border-blue-500"
+                    ? "border-primary"
                     : "border-transparent opacity-70 hover:opacity-100"
                 )}
               >
