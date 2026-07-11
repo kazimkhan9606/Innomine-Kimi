@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { cn } from "@/lib/utils";
 
@@ -9,7 +10,7 @@ export interface RecentlyViewedCardProps extends React.HTMLAttributes<HTMLDivEle
 }
 
 export const RecentlyViewedCard = React.forwardRef<HTMLDivElement, RecentlyViewedCardProps>(
-  ({ className, id, title, imageUrl, price, ...props }, ref) => {
+  ({ className, title, imageUrl, price, ...props }, ref) => {
     const formatter = new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",
@@ -27,12 +28,11 @@ export const RecentlyViewedCard = React.forwardRef<HTMLDivElement, RecentlyViewe
         {...props}
       >
         <div className="relative aspect-square w-full overflow-hidden bg-surface">
-          <img
-            src={imageUrl}
+          <Image src={imageUrl}
             alt={title}
             className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
             loading="lazy"
-          />
+           fill sizes="(max-width: 768px) 100vw, 50vw" />
         </div>
         <div className="p-3">
           <h4 className="truncate text-xs font-medium text-text-primary mb-1">

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export interface CreatorAvatarProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -19,8 +20,8 @@ export const CreatorAvatar = React.forwardRef<HTMLDivElement, CreatorAvatarProps
 
     return (
       <div ref={ref} className={cn("relative inline-block", className)} {...props}>
-        <div className={cn("overflow-hidden rounded-full bg-surface border-2 border-background", sizes[size])}>
-          <img src={src} alt={alt} className="h-full w-full object-cover" loading="lazy" />
+        <div className={cn("relative overflow-hidden rounded-full bg-surface border-2 border-background", sizes[size])}>
+          <Image src={src} alt={alt} className="h-full w-full object-cover" loading="lazy" fill sizes="(max-width: 768px) 100vw, 50vw" />
         </div>
         {isVerified && (
           <div className="absolute bottom-0 right-0 rounded-full bg-background p-0.5">

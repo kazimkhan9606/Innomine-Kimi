@@ -1,13 +1,25 @@
 import { Category, Faq, NavMenuItem, Product, Statistic, Testimonial } from '@/types/mock';
 
-export const MOCK_CATEGORIES: Category[] = [
-  { id: 'cat-1', name: 'Technology', slug: 'technology', description: 'Cutting-edge tech gadgets.', imageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80', productCount: 142 },
-  { id: 'cat-2', name: 'AI & Robotics', slug: 'ai-robotics', description: 'Intelligent machines and AI tools.', imageUrl: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80', productCount: 84 },
-  { id: 'cat-3', name: 'Sustainability', slug: 'sustainability', description: 'Eco-friendly and sustainable innovations.', imageUrl: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80', productCount: 215 },
-  { id: 'cat-4', name: 'Healthcare', slug: 'healthcare', description: 'Medical and wellness devices.', imageUrl: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80', productCount: 56 },
-  { id: 'cat-5', name: 'IoT & Smart Home', slug: 'iot', description: 'Connected devices for modern living.', imageUrl: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80', productCount: 302 },
-  { id: 'cat-6', name: 'Education', slug: 'education', description: 'Tools for learning and development.', imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80', productCount: 93 },
-];
+import { categories } from '@/data/categories';
+
+const CATEGORY_IMAGES: Record<string, string> = {
+  'technology': 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80',
+  'ai': 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80',
+  'robotics': 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80',
+  'wearables': 'https://images.unsplash.com/photo-1555664424720-056d354a7c1b?auto=format&fit=crop&q=80',
+  'smart-home': 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80',
+  'audio': 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80',
+  'iot': 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80',
+  'healthcare': 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80',
+  'energy': 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80',
+  'consumer-electronics': 'https://images.unsplash.com/photo-1526406915894-7bcd65f60845?auto=format&fit=crop&q=80'
+};
+
+export const MOCK_CATEGORIES: Category[] = categories.map(c => ({
+  ...c,
+  imageUrl: CATEGORY_IMAGES[c.slug] || CATEGORY_IMAGES['technology'],
+  productCount: 142
+}));
 
 export const MOCK_PRODUCTS: Product[] = [
   {

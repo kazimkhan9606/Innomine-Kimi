@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { cn } from "@/lib/utils";
 import { Badge } from "./Badge";
@@ -17,7 +18,7 @@ export interface ProductCardProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
-  ({ className, id, title, imageUrl, price, originalPrice, category, rating, reviews, isInnovation, ...props }, ref) => {
+  ({ className, title, imageUrl, price, originalPrice, category, rating, reviews, isInnovation, ...props }, ref) => {
     return (
       <div
         ref={ref}
@@ -28,12 +29,11 @@ export const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
         {...props}
       >
         <div className="relative aspect-square overflow-hidden bg-surface">
-          <img
-            src={imageUrl}
+          <Image src={imageUrl}
             alt={title}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
-          />
+           fill sizes="(max-width: 768px) 100vw, 50vw" />
           <div className="absolute left-3 top-3 flex flex-col gap-2">
             {isInnovation && <Badge variant="innovation">Innovation</Badge>}
           </div>

@@ -32,7 +32,7 @@ export default function CategoriesPage() {
                 const imageUrl = firstProduct?.thumbnailUrl || 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=400';
                 
                 return (
-                  <Link key={category.id} href={`/category/${category.id}`}>
+                  <Link key={category.id} href={`/category/${category.slug}`}>
                     <CategoryCard
                       id={category.id}
                       title={category.name}

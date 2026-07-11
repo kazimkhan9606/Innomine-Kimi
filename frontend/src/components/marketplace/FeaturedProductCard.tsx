@@ -1,8 +1,8 @@
 import React from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Badge } from "./Badge";
 import { Price } from "./Price";
-import { Rating } from "./Rating";
 import { ArrowRight } from "lucide-react";
 
 export interface FeaturedProductCardProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -17,7 +17,7 @@ export interface FeaturedProductCardProps extends React.HTMLAttributes<HTMLDivEl
 }
 
 export const FeaturedProductCard = React.forwardRef<HTMLDivElement, FeaturedProductCardProps>(
-  ({ className, id, title, description, imageUrl, price, category, creatorName, isInnovation, ...props }, ref) => {
+  ({ className, title, description, imageUrl, price, category, creatorName, isInnovation, ...props }, ref) => {
     return (
       <div
         ref={ref}
@@ -28,11 +28,13 @@ export const FeaturedProductCard = React.forwardRef<HTMLDivElement, FeaturedProd
         {...props}
       >
         <div className="relative h-64 w-full md:h-full md:w-1/2 overflow-hidden bg-surface">
-          <img
+          <Image
             src={imageUrl}
             alt={title}
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
-            loading="lazy"
+            priority
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent md:hidden" />
           <div className="absolute inset-0 bg-gradient-to-r from-transparent to-card hidden md:block" />

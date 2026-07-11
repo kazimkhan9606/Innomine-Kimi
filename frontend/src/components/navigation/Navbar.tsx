@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Search, ShoppingCart, User, Bell, Heart, Menu } from "lucide-react";
+import { Search, ShoppingCart, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/custom/ThemeToggle";
 import { MOCK_NAV } from "@/constants/mock-data";

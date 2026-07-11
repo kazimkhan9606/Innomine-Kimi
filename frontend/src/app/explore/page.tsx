@@ -30,7 +30,22 @@ export default async function ExplorePage({ searchParams }: { searchParams: Prom
   // Filter products by all active params
   const displayProducts = products.filter(p => {
     // Search match
-    const searchMatch = !q || p.title.toLowerCase().includes(q) || p.description.toLowerCase().includes(q);
+    let searchMatch = false;
+    if (!q) {
+      searchMatch = true;
+    } else {
+      const pCreator = innovators.find(c => c.id === p.creatorId);
+      const pCategory = categories.find(c => c.id === p.categoryId);
+      
+      const inTitle = p.title.toLowerCase().includes(q);
+      const inDesc = p.description.toLowerCase().includes(q);
+      const inCreator = pCreator?.name.toLowerCase().includes(q) || false;
+      const inCategory = pCategory?.name.toLowerCase().includes(q) || false;
+      const inTags = p.tags ? p.tags.some(tag => tag.toLowerCase().includes(q)) : false;
+
+      searchMatch = inTitle || inDesc || inCreator || inCategory || inTags;
+    }
+
     // Category match
     const catMatch = !cat || p.categoryId === cat;
     // Price match
@@ -177,7 +192,7 @@ export default async function ExplorePage({ searchParams }: { searchParams: Prom
                   const imageUrl = firstProduct?.thumbnailUrl || 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=400';
                   
                   return (
-                    <Link key={category.id} href={`/category/${category.id}`}>
+                    <Link key={category.id} href={`/category/${category.slug}`}>
                       <CategoryCard
                         id={category.id}
                         title={category.name}

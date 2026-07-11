@@ -1,4 +1,3 @@
-import { SectionHeader } from "@/components/custom/SectionHeader";
 import { FadeIn, Reveal } from "@/components/providers/MotionProvider";
 import { ShieldCheck, Video, Rocket } from "lucide-react";
 

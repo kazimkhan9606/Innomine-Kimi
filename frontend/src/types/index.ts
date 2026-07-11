@@ -41,13 +41,14 @@ export interface Product {
   galleryImages: string[];
   reviews: Review[];
   specifications: Specification[];
+  tags?: string[];
   createdAt: string;
 }
 
 export interface FeedPost {
   id: string;
   creatorId: string;
-  productId?: string;
+  productId: string;
   videoUrl: string;
   thumbnailUrl: string;
   description: string;

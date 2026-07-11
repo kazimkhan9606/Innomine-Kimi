@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { User } from "lucide-react";
+import Image from "next/image";
 
 export interface AvatarProps {
   src?: string;
@@ -53,13 +54,15 @@ export function Avatar({
 
   return (
     <div className={cn("relative inline-block rounded-full", sizes[size], className)}>
-      <div className="w-full h-full overflow-hidden rounded-full border border-border bg-background">
+      <div className="relative w-full h-full overflow-hidden rounded-full border border-border bg-background">
         {src && !imgError ? (
-          <img
+          <Image 
             src={src}
             alt={alt || "User avatar"}
             className="w-full h-full object-cover"
             onError={() => setImgError(true)}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         ) : (
           renderFallback()

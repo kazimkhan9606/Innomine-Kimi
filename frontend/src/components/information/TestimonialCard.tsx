@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { cn } from "@/lib/utils";
 import { CardHover } from "@/components/motion";
@@ -32,11 +33,10 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
       </p>
       <div className="flex items-center gap-4 relative z-10">
         {authorAvatar ? (
-          <img
-            src={authorAvatar}
+          <Image src={authorAvatar}
             alt={authorName}
             className="w-12 h-12 rounded-full object-cover border border-border"
-          />
+           fill sizes="(max-width: 768px) 100vw, 50vw" />
         ) : (
           <div className="w-12 h-12 rounded-full bg-surface flex items-center justify-center text-text-secondary font-bold">
             {authorName.charAt(0)}

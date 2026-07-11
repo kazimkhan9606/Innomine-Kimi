@@ -44,14 +44,14 @@ export function MobileMenu() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setOpen(false)}
-              className="fixed inset-0 z-[99] bg-black/60 backdrop-blur-sm"
+              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
             />
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 z-[100] w-[300px] sm:w-[350px] bg-background border-l shadow-2xl flex flex-col"
+              className="fixed top-0 right-0 bottom-0 z-50 w-[300px] sm:w-[350px] bg-background border-l shadow-2xl flex flex-col"
             >
               <div className="px-6 py-4 border-b flex items-center justify-between">
                 <div className="flex items-center gap-2">

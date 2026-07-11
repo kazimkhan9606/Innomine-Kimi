@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { cn } from "@/lib/utils";
 import { Price } from "./Price";
@@ -15,7 +16,7 @@ export interface HorizontalProductCardProps extends React.HTMLAttributes<HTMLDiv
 }
 
 export const HorizontalProductCard = React.forwardRef<HTMLDivElement, HorizontalProductCardProps>(
-  ({ className, id, title, imageUrl, price, originalPrice, category, rating, reviews, ...props }, ref) => {
+  ({ className, title, imageUrl, price, originalPrice, category, rating, reviews, ...props }, ref) => {
     return (
       <div
         ref={ref}
@@ -26,12 +27,11 @@ export const HorizontalProductCard = React.forwardRef<HTMLDivElement, Horizontal
         {...props}
       >
         <div className="relative h-32 w-32 shrink-0 overflow-hidden bg-surface sm:h-40 sm:w-40">
-          <img
-            src={imageUrl}
+          <Image src={imageUrl}
             alt={title}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
-          />
+           fill sizes="(max-width: 768px) 100vw, 50vw" />
         </div>
         <div className="flex flex-col flex-1 p-4 sm:p-5">
           <div className="mb-1 text-xs font-medium text-text-secondary uppercase tracking-wider">

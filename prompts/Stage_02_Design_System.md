@@ -2368,3 +2368,1455 @@ Return:
 - build succeeds
 
 Do NOT claim success unless every verification has been completed.
+
+# INNOMINE — STAGE 2 FINAL STABILIZATION (MASTER FIX)
+
+You are continuing development of the Innomine frontend.
+
+This is NOT a feature implementation task.
+
+This is NOT Stage 3.
+
+This is the FINAL stabilization pass before moving to backend development.
+
+Your only objective is to make the frontend completely stable, production-ready, and free from errors.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+READ THIS FIRST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Before writing a single line of code:
+
+1. Read the existing codebase completely.
+2. Understand the current architecture.
+3. Understand the Design System.
+4. Understand the routing.
+5. Understand the mock data.
+6. Understand reusable components.
+
+DO NOT blindly rewrite files.
+
+DO NOT replace working code.
+
+ONLY modify files that actually require fixing.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STRICT RULES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DO NOT redesign the website.
+
+DO NOT modify the Design System.
+
+DO NOT change typography.
+
+DO NOT change spacing.
+
+DO NOT change colors.
+
+DO NOT change animations.
+
+DO NOT replace reusable components.
+
+DO NOT introduce breaking changes.
+
+DO NOT use any.
+
+DO NOT use ts-ignore.
+
+DO NOT disable TypeScript.
+
+DO NOT disable ESLint.
+
+DO NOT fake success.
+
+Find the ROOT CAUSE of every issue and fix it correctly.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PRIMARY OBJECTIVE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The frontend must satisfy ALL of the following:
+
+✅ npm run dev runs cleanly
+
+✅ npm run build succeeds
+
+✅ npm run type-check succeeds
+
+✅ npm run lint has zero errors and clean up warnings wherever practical
+
+✅ No browser runtime errors
+
+✅ No Next.js runtime overlay
+
+✅ No React runtime errors
+
+✅ No broken routes
+
+✅ No broken navigation
+
+✅ No broken images
+
+✅ No broken mock data
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FIX ALL CURRENT ISSUES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1.
+
+Fix the FeedPost type mismatch.
+
+Current issue:
+
+FeedPost.productId is defined as
+
+string | undefined
+
+while FeedPostCard expects
+
+string
+
+There must be ONE canonical FeedPost interface.
+
+Synchronize:
+
+• FeedPost type
+
+• FeedPostCard
+
+• Feed mock data
+
+• Product lookup
+
+• Feed rendering
+
+• Search logic
+
+No inconsistent interfaces.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2.
+
+Fix TypeScript completely.
+
+Current commands
+
+npm run build
+
+npm run type-check
+
+must complete successfully.
+
+No interface mismatches.
+
+No prop mismatches.
+
+No optional property conflicts.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+3.
+
+Fix Search.
+
+Search currently returns incorrect products.
+
+Searching
+
+AI
+
+Robot
+
+Headset
+
+Ring
+
+must return matching products only.
+
+Implement proper filtering using
+
+title
+
+category
+
+creator
+
+tags
+
+keywords
+
+Search must update results immediately.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+4.
+
+Fix Category Routing.
+
+Current category pages still produce runtime errors.
+
+Completely migrate every dynamic route to the correct Next.js 16 implementation.
+
+Resolve:
+
+params
+
+searchParams
+
+Promise
+
+await params
+
+React.use()
+
+No runtime overlays.
+
+No warnings.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+5.
+
+Fix Product Routing.
+
+Every product card must open correctly.
+
+No 404.
+
+No invalid IDs.
+
+Every product must exist.
+
+Every product page must render.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+6.
+
+Fix Mock Data.
+
+Currently inconsistent.
+
+Some pages display
+
+8 products
+
+others
+
+24 products.
+
+Create ONE shared mock database.
+
+Ensure:
+
+24+ products
+
+10+ innovators
+
+10+ categories
+
+Feed references valid products.
+
+Creators reference valid products.
+
+Categories reference valid products.
+
+No duplicate IDs.
+
+No broken references.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+7.
+
+Fix Image Loading.
+
+Currently images fail to load.
+
+Investigate completely.
+
+Verify:
+
+next.config.ts
+
+remotePatterns
+
+image domains
+
+mock URLs
+
+Image component implementation
+
+Every image must display correctly.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+8.
+
+Fix Image Optimization.
+
+Remove:
+
+Failed to write image cache
+
+LRUCache
+
+Unhandled Promise Rejection
+
+Missing sizes warnings
+
+Image optimization warnings
+
+Every Image component must use correct
+
+sizes
+
+width
+
+height
+
+fill
+
+implementation.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+9.
+
+Replace production <img> tags.
+
+Where appropriate, migrate production components to
+
+next/image
+
+using proper sizing.
+
+Do not introduce layout shifts.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+10.
+
+Fix Mobile Navigation.
+
+Current issue:
+
+Opening hamburger menu creates grey overlay but menu is unusable.
+
+Fix:
+
+Drawer
+
+Sheet
+
+Overlay
+
+Focus
+
+Animation
+
+Scroll Lock
+
+Escape Key
+
+Outside Click
+
+Z-index
+
+The mobile navigation must function correctly.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+11.
+
+Verify Navigation.
+
+Every navigation item must work.
+
+Explore
+
+Categories
+
+Innovation Feed
+
+Innovators
+
+About
+
+Become an Innovator
+
+Footer Links
+
+Product Cards
+
+Creator Cards
+
+Category Cards
+
+Search Results
+
+No broken links.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+12.
+
+Verify Feed.
+
+Keep current design.
+
+Verify:
+
+Creator
+
+Likes
+
+Comments
+
+Shares
+
+Linked Product
+
+Media
+
+Navigation
+
+No broken references.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+13.
+
+Verify Product Pages.
+
+Ensure:
+
+Gallery
+
+Images
+
+Price
+
+Creator
+
+Badges
+
+Specifications
+
+Reviews
+
+Related Products
+
+Wishlist
+
+Share
+
+Add to Cart
+
+Buy Now
+
+Everything loads correctly.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+14.
+
+Clean ESLint warnings.
+
+Remove:
+
+Unused imports
+
+Unused variables
+
+Unused props
+
+Unused interfaces
+
+Dead code
+
+Clean the codebase.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+15.
+
+Ensure Next.js 16 compliance.
+
+Remove every warning involving:
+
+params
+
+searchParams
+
+dynamic APIs
+
+React.use()
+
+Server Components
+
+Async APIs
+
+No runtime overlays.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+16.
+
+Performance Audit.
+
+Optimize:
+
+Rendering
+
+Images
+
+Lazy loading
+
+Duplicate renders
+
+Bundle size
+
+Only optimize where beneficial.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+17.
+
+FINAL VALIDATION
+
+Execute ALL commands:
+
+npm run dev
+
+npm run build
+
+npm run type-check
+
+npm run lint
+
+Do NOT claim success unless ALL commands pass.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+18.
+
+FINAL QA
+
+Manually verify:
+
+Desktop
+
+Tablet
+
+Mobile
+
+Verify:
+
+Explore
+
+Categories
+
+Category Details
+
+Product Details
+
+Innovation Feed
+
+Innovators
+
+Creator Profiles
+
+Search
+
+Filters
+
+Navigation
+
+Footer
+
+Images
+
+Responsive Layout
+
+Console
+
+Terminal
+
+Everything must function correctly.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FINAL RESPONSE
+
+Do NOT simply say "fixed".
+
+Provide:
+
+1. Root cause of every issue.
+
+2. Files modified.
+
+3. Bugs fixed.
+
+4. Build output.
+
+5. Type-check output.
+
+6. Lint output.
+
+7. Runtime verification.
+
+8. Remaining issues (if any).
+
+Only mark Stage 2 complete if the frontend is stable, production-ready, and all verification steps have actually been executed successfully.
+
+# FRONTEND STABILIZATION PHASE – DO NOT CHANGE UI/UX OR ARCHITECTURE
+
+You are working on the Innomine frontend. The project now successfully passes:
+
+- npm run build ✅
+- npm run type-check ✅
+- npm run lint ✅
+
+DO NOT modify the design system, branding, layout, typography, spacing, colors, animations, navigation, user flow, component hierarchy, folder structure, or any functionality that is already working.
+
+The objective is ONLY to stabilize the frontend by fixing runtime issues while preserving the existing premium Innomine experience exactly as designed in the PRD, Design System, and Technical Architecture documents.
+
+==========================================================
+PRIMARY GOAL
+==========================================================
+
+Make the frontend production-ready by eliminating ALL runtime errors without changing the appearance or behavior of the website.
+
+==========================================================
+FIX #1 — CATEGORY ROUTING
+==========================================================
+
+The following category URLs currently return 404:
+
+/category/ai
+/category/robotics
+/category/iot
+/category/sustainability
+/category/energy
+/category/smarthome
+/category/wearables
+/category/audio
+/category/healthcare
+/category/consumer-electronics
+
+Only /category/technology works.
+
+Find the root cause.
+
+Possible causes include:
+
+- slug mismatch
+- id vs slug lookup
+- incorrect dynamic route
+- wrong dataset
+- incorrect filtering
+- incorrect category mapping
+
+DO NOT hardcode.
+
+Implement a proper slug-based routing solution.
+
+Every category shown in the navigation must open successfully.
+
+No category should produce a 404 unless it genuinely does not exist.
+
+==========================================================
+FIX #2 — BROKEN PRODUCT IMAGES
+==========================================================
+
+Many product cards display black placeholders because the image URLs return HTTP 404.
+
+Locate every invalid image URL.
+
+Replace ONLY broken image URLs.
+
+Keep the same product.
+
+Keep the same product theme.
+
+Keep the same visual style.
+
+Examples:
+
+AI
+Robotics
+Healthcare
+Smart Home
+IoT
+Wearables
+Technology
+
+Every image must:
+
+- load correctly
+- be high quality
+- have similar composition
+- preserve premium marketplace appearance
+
+Do NOT replace images randomly.
+
+==========================================================
+FIX #3 — NEXT/IMAGE IMPLEMENTATION
+==========================================================
+
+Audit every Next Image component.
+
+Fix:
+
+- missing sizes prop
+- fill without relative parent
+- incorrect objectFit
+- incorrect width/height
+- invalid parent positioning
+- incorrect loading strategy
+
+Every Image component must satisfy Next.js best practices.
+
+Remove every browser warning.
+
+==========================================================
+FIX #4 — IMAGE CACHE ERRORS
+==========================================================
+
+The terminal repeatedly shows:
+
+LRUCache
+calculateSize returned 0
+
+and
+
+Failed to write image to cache
+
+Identify the actual source.
+
+Fix the implementation instead of suppressing the warning.
+
+No cache-related runtime errors should remain.
+
+==========================================================
+FIX #5 — IMAGE OPTIMIZATION
+==========================================================
+
+Ensure:
+
+- next.config is correct
+- remotePatterns/domains are correct
+- Image optimization works
+- no upstream image failures
+- no broken URLs
+- no repeated fetch failures
+
+==========================================================
+FIX #6 — FEED PAGE
+==========================================================
+
+The Innovation Feed currently has:
+
+- black videos/images
+- partially loaded media
+- broken thumbnails
+- missing previews
+
+Every feed card must render correctly.
+
+Every thumbnail must load.
+
+Every video preview must display.
+
+No layout shifts.
+
+No broken media.
+
+==========================================================
+FIX #7 — PRODUCT PAGE
+==========================================================
+
+Verify every product page.
+
+Fix:
+
+- gallery images
+- hero images
+- thumbnails
+- specifications
+- creator section
+- image loading
+- responsive behavior
+
+Maintain existing UI exactly.
+
+==========================================================
+FIX #8 — CONSOLE CLEANUP
+==========================================================
+
+After completion there should be:
+
+NO
+
+Unhandled Promise Rejection
+
+NO
+
+Image warnings
+
+NO
+
+Image optimization warnings
+
+NO
+
+404 image requests
+
+NO
+
+LRUCache errors
+
+NO
+
+Browser console errors
+
+NO
+
+Next.js runtime warnings
+
+==========================================================
+VALIDATION
+==========================================================
+
+Before considering the task complete, automatically verify ALL of the following:
+
+✓ npm run dev
+
+✓ npm run build
+
+✓ npm run type-check
+
+✓ npm run lint
+
+Visit and verify:
+
+/
+
+/explore
+
+/feed
+
+/innovators
+
+/about
+
+/category/technology
+
+/category/ai
+
+/category/robotics
+
+/category/iot
+
+/category/healthcare
+
+/category/energy
+
+/category/wearables
+
+/category/audio
+
+/category/sustainability
+
+/product/*
+
+Every page must render successfully.
+
+Every image must load.
+
+Every category must work.
+
+No runtime errors.
+
+==========================================================
+STRICT RULES
+==========================================================
+
+DO NOT redesign anything.
+
+DO NOT change styling.
+
+DO NOT modify branding.
+
+DO NOT change spacing.
+
+DO NOT change typography.
+
+DO NOT remove features.
+
+DO NOT simplify components.
+
+DO NOT replace layouts.
+
+DO NOT alter the premium look.
+
+DO NOT introduce placeholder content.
+
+Only fix runtime issues while preserving the current UI exactly.
+
+==========================================================
+FINAL RESPONSE
+==========================================================
+
+Do NOT stop after making code changes.
+
+Provide a verification report containing:
+
+1. Every bug found.
+2. Root cause of each bug.
+3. Exact files modified.
+4. Exact fixes applied.
+5. Remaining issues (if any).
+6. Confirmation that every category works.
+7. Confirmation that every image loads.
+8. Confirmation that npm run dev, build, type-check, and lint all pass.
+9. Confirmation that the browser console is free of runtime errors.
+10. Confirmation that the frontend is stable and ready for backend integration.
+
+# CRITICAL BUG FIX – PRODUCT PAGE DATA MISMATCH
+
+The Product Detail page is rendering incorrect data combinations.
+
+DO NOT redesign anything.
+
+DO NOT modify the UI.
+
+DO NOT change spacing, styling, layout, animations or branding.
+
+Only fix the data binding.
+
+==================================================
+CURRENT BUG
+==================================================
+
+When opening a product page, different datasets are being mixed.
+
+Example:
+
+Product:
+EchoBeat ANC Headphones
+
+Background:
+Random creator portrait
+
+Gallery:
+Headphone image
+
+Creator:
+Another creator
+
+Specifications:
+Correct
+
+Another example:
+
+Product:
+Nova AI Desk Assistant
+
+Background:
+Random person's portrait
+
+Gallery:
+Smart lock image
+
+Specifications:
+Nova AI
+
+This proves the Product page is pulling fields from different records.
+
+==================================================
+EXPECTED BEHAVIOR
+==================================================
+
+Every product page must use ONE product record only.
+
+The following must all belong to the SAME product:
+
+• hero background
+• gallery images
+• thumbnail images
+• product title
+• description
+• specifications
+• creator
+• category
+• badges
+• price
+
+Nothing should come from another product.
+
+==================================================
+AUDIT
+==================================================
+
+Inspect:
+
+Product page
+
+ProductDetail component
+
+Gallery component
+
+Hero component
+
+Creator section
+
+Mock data
+
+Product lookup
+
+Creator lookup
+
+Media lookup
+
+Background image logic
+
+Find where different arrays are being indexed independently.
+
+Typical mistakes include:
+
+products[index]
+
+creators[index]
+
+images[index]
+
+instead of using
+
+product.creatorId
+
+product.gallery
+
+product.heroImage
+
+==================================================
+FIX
+==================================================
+
+Every Product page should be generated from ONE product object.
+
+Never use matching indexes.
+
+Never assume arrays are aligned.
+
+Use IDs only.
+
+Correct relationships:
+
+product.id
+
+product.creatorId
+
+product.gallery[]
+
+product.heroImage
+
+product.thumbnail
+
+product.specifications
+
+product.category
+
+creator.id == product.creatorId
+
+Everything must be resolved through IDs.
+
+==================================================
+VALIDATION
+==================================================
+
+Open every product page.
+
+Verify:
+
+✓ hero image matches product
+
+✓ gallery matches product
+
+✓ creator matches product
+
+✓ specifications match product
+
+✓ title matches images
+
+✓ category matches product
+
+✓ background matches product
+
+No mixed content anywhere.
+
+==================================================
+FINAL REPORT
+==================================================
+
+Report:
+
+1. Root cause of the mismatch.
+2. Files modified.
+3. Components modified.
+4. Data relationships corrected.
+5. Confirmation that every product page now renders a single consistent product without mixing records.
+
+You are working on the Innomine codebase.
+
+IMPORTANT:
+- DO NOT redesign the UI.
+- DO NOT change typography, colors, spacing, animations, layouts, components, or branding.
+- DO NOT change any working functionality.
+- ONLY fix the issues listed below.
+- After every fix, verify the application still passes:
+  - npm run type-check
+  - npm run lint
+  - npm run build
+- Fix the root cause instead of hiding errors.
+- Do not disable Next.js Image optimization unless absolutely necessary.
+
+====================================================
+ISSUE 1 — LRUCache Image Cache Errors
+====================================================
+
+The terminal repeatedly shows:
+
+Error:
+LRUCache: calculateSize returned 0
+Failed to write image to cache
+unhandledRejection
+
+Find the exact root cause.
+
+Investigate:
+
+- next.config.ts / next.config.js
+- next/image configuration
+- image loader
+- custom cache implementation
+- image utility functions
+- middleware
+- Turbopack compatibility
+- third-party packages overriding cache behavior
+
+Fix the implementation.
+
+Do NOT suppress the error.
+
+====================================================
+ISSUE 2 — Broken Images
+====================================================
+
+Several images return:
+
+404 upstream image response failed
+
+Audit ALL product images.
+
+Audit ALL innovator images.
+
+Audit ALL category images.
+
+For every broken image:
+
+- replace it with a valid image
+OR
+- use a local placeholder
+OR
+- provide a graceful fallback
+
+No page should ever show a broken image.
+
+====================================================
+ISSUE 3 — Optimize Next/Image Properly
+====================================================
+
+Fix every warning related to:
+
+missing sizes
+
+Largest Contentful Paint
+
+loading="eager"
+
+Every above-the-fold image should have:
+
+proper sizes
+
+priority/loading="eager"
+
+correct fill usage
+
+proper width/height
+
+No image warnings should remain.
+
+====================================================
+ISSUE 4 — Category Routing Bug
+====================================================
+
+This is currently inconsistent.
+
+WORKING:
+
+Categories dropdown
+
+↓
+
+Technology
+
+↓
+
+AI
+
+↓
+
+Robotics
+
+↓
+
+Smart Home
+
+↓
+
+etc.
+
+These pages load correctly.
+
+BROKEN:
+
+Technology page
+
+↓
+
+Click AI
+
+↓
+
+404
+
+Technology page
+
+↓
+
+Click Robotics
+
+↓
+
+404
+
+Technology page
+
+↓
+
+Click Smart Home
+
+↓
+
+404
+
+Technology page
+
+↓
+
+Click Wearables
+
+↓
+
+404
+
+Technology page
+
+↓
+
+Click IoT
+
+↓
+
+404
+
+Technology page
+
+↓
+
+Every subcategory link is broken.
+
+Fix the routing.
+
+Every category entry point must navigate to exactly the same destination.
+
+Examples:
+
+/category/technology
+
+↓
+
+AI
+
+must go to
+
+/category/ai
+
+NOT
+
+/category/cat-2
+
+NOT
+
+/category/technology/ai
+
+unless that route actually exists.
+
+Audit:
+
+CategoryCard
+
+CategoryGrid
+
+CategoryPage
+
+CategorySidebar
+
+CategoryNavigation
+
+CategoryLinks
+
+Slug generation
+
+Category IDs
+
+Dynamic routes
+
+Route params
+
+Href generation
+
+Ensure every category always uses one canonical slug.
+
+====================================================
+ISSUE 5 — Route Validation
+====================================================
+
+Verify all routes:
+
+/
+
+/explore
+
+/feed
+
+/innovators
+
+/about
+
+/product/[slug]
+
+/category/[slug]
+
+Every product.
+
+Every category.
+
+Every innovator.
+
+Every card.
+
+Every CTA.
+
+Every navigation item.
+
+Every internal link.
+
+There must be:
+
+No 404
+
+No invalid href
+
+No broken links
+
+====================================================
+ISSUE 6 — Image Data Validation
+====================================================
+
+Inspect every mock dataset.
+
+Ensure:
+
+product.image
+
+creator.avatar
+
+category.image
+
+feed.thumbnail
+
+hero.image
+
+gallery.images
+
+contain valid URLs.
+
+If a URL is invalid:
+
+Replace it.
+
+Do not leave dead URLs.
+
+====================================================
+FINAL VALIDATION
+====================================================
+
+When finished:
+
+Run:
+
+npm run type-check
+
+npm run lint
+
+npm run build
+
+npm run dev
+
+Manually verify:
+
+✓ Product pages load correctly
+
+✓ Product image is correct
+
+✓ Creator image is correct
+
+✓ No mixed images
+
+✓ No broken images
+
+✓ No LRUCache errors
+
+✓ No image optimization warnings
+
+✓ No 404s
+
+✓ Technology page subcategories work
+
+✓ Categories dropdown behaves identically
+
+Finally provide a report with:
+
+1. Root cause of the LRUCache issue.
+2. Files modified.
+3. Root cause of the category routing bug.
+4. Number of broken images replaced.
+5. Remaining warnings (if any).
+6. Confirmation that no UI/UX changes were made.

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { cn } from "@/lib/utils";
 
@@ -9,7 +10,7 @@ export interface CategoryCardProps extends React.HTMLAttributes<HTMLDivElement> 
 }
 
 export const CategoryCard = React.forwardRef<HTMLDivElement, CategoryCardProps>(
-  ({ className, id, title, imageUrl, itemCount, ...props }, ref) => {
+  ({ className, title, imageUrl, itemCount, ...props }, ref) => {
     return (
       <div
         ref={ref}
@@ -19,11 +20,10 @@ export const CategoryCard = React.forwardRef<HTMLDivElement, CategoryCardProps>(
         )}
         {...props}
       >
-        <img
-          src={imageUrl}
+        <Image src={imageUrl}
           alt={title}
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+         fill sizes="(max-width: 768px) 100vw, 50vw" />
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent transition-opacity group-hover:from-background/90" />
         
         <div className="relative z-10 w-full text-text-primary">

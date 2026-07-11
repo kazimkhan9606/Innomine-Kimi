@@ -33,7 +33,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
             </div>
             <div className="mb-8">
               <CategoryClientWrapper 
-                categories={categories.map(c => ({ id: c.id, label: c.name }))}
+                categories={categories.map(c => ({ id: c.id, label: c.name, slug: c.slug }))}
                 activeId={category.id}
               />
             </div>

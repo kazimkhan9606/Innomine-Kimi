@@ -1,6 +1,4 @@
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { SectionHeader } from "@/components/custom/SectionHeader";
 import { FadeIn, Reveal } from "@/components/providers/MotionProvider";
 import { Rocket, Video, ShieldCheck, TrendingUp } from "lucide-react";
 

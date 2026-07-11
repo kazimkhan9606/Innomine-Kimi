@@ -8,7 +8,7 @@ export function CategoryClientWrapper({
   categories, 
   activeId 
 }: { 
-  categories: { id: string; label: string }[]; 
+  categories: { id: string; label: string; slug?: string }[]; 
   activeId: string; 
 }) {
   const router = useRouter();
@@ -17,7 +17,11 @@ export function CategoryClientWrapper({
     <CategoryChips 
       categories={categories}
       activeId={activeId}
-      onSelect={(id) => router.push(`/category/${id}`)}
+      onSelect={(id) => {
+        const cat = categories.find(c => c.id === id);
+        if (cat?.slug) router.push(`/category/${cat.slug}`);
+        else router.push(`/category/${id}`);
+      }}
     />
   );
 }

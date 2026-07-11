@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { notFound } from 'next/navigation';
 import { Container } from '@/components/layout/Container';
 import { Grid } from '@/components/layout/Grid';
@@ -40,7 +41,9 @@ export default async function ProductDetailsPage({ params }: { params: Promise<{
               <div className="flex items-center gap-2 mb-6">
                 <Text variant="body-m" className="text-text-muted">Created by</Text>
                 <Link href={`/innovator/${creator.id}`} className="flex items-center gap-2 text-primary hover:opacity-80 transition-opacity font-medium">
-                  <img src={creator.avatarUrl} alt={creator.name} className="w-6 h-6 rounded-full object-cover" />
+                  <div className="relative w-6 h-6 rounded-full overflow-hidden shrink-0">
+                    <Image src={creator.avatarUrl} alt={creator.name} className="object-cover" fill sizes="(max-width: 768px) 100vw, 50vw" />
+                  </div>
                   {creator.name}
                 </Link>
               </div>

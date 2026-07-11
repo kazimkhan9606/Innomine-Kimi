@@ -12,7 +12,7 @@ export const products: Product[] = [
     galleryImages: [
       'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&q=80&w=800',
       'https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1601134467661-3d77ce0a4be2?auto=format&fit=crop&q=80&w=800'
+      'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=800'
     ],
     reviews: [{ id: 'rev-1', userId: 'u1', userName: 'John D.', rating: 5, comment: 'Incredible battery life!', date: '2026-06-15' }],
     specifications: [{ name: 'Material', value: 'Titanium' }, { name: 'Battery Life', value: '7 Days' }],
@@ -25,9 +25,9 @@ export const products: Product[] = [
     price: 149,
     categoryId: 'cat-2',
     creatorId: 'cr-10',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1546447147-3bfc38eb20e8?auto=format&fit=crop&q=80&w=400',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=400',
     galleryImages: [
-      'https://images.unsplash.com/photo-1546447147-3bfc38eb20e8?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800',
       'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800',
       'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800'
     ],
@@ -68,8 +68,8 @@ export const products: Product[] = [
     price: 129,
     categoryId: 'cat-5',
     creatorId: 'cr-4',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1507473885765-e6ed057f7821?auto=format&fit=crop&q=80&w=400',
-    galleryImages: ['https://images.unsplash.com/photo-1507473885765-e6ed057f7821?auto=format&fit=crop&q=80&w=800'],
+    thumbnailUrl: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=400',
+    galleryImages: ['https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800'],
     reviews: [],
     specifications: [{ name: 'Color Temp', value: '2700K - 6500K' }],
     createdAt: '2026-06-10T09:15:00Z'
@@ -133,8 +133,8 @@ export const products: Product[] = [
     price: 199,
     categoryId: 'cat-9',
     creatorId: 'cr-6',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1567925008581-671cb61d9a5b?auto=format&fit=crop&q=80&w=400',
-    galleryImages: ['https://images.unsplash.com/photo-1567925008581-671cb61d9a5b?auto=format&fit=crop&q=80&w=800'],
+    thumbnailUrl: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=400',
+    galleryImages: ['https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800'],
     reviews: [{ id: 'rev-6', userId: 'u6', userName: 'EcoWarrior', rating: 5, comment: 'Saved me 20% on bills.', date: '2026-05-02' }],
     specifications: [{ name: 'Display', value: 'OLED Touch' }],
     createdAt: '2026-03-01T09:00:00Z'
@@ -250,8 +250,8 @@ export const products: Product[] = [
     price: 899,
     categoryId: 'cat-3',
     creatorId: 'cr-1',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1534045585093-9c84e1b8bbf0?auto=format&fit=crop&q=80&w=400',
-    galleryImages: ['https://images.unsplash.com/photo-1534045585093-9c84e1b8bbf0?auto=format&fit=crop&q=80&w=800'],
+    thumbnailUrl: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=400',
+    galleryImages: ['https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800'],
     reviews: [],
     specifications: [{ name: 'AI', value: 'Emotive Response Engine' }],
     createdAt: '2026-05-30T10:00:00Z'

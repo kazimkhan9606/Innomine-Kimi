@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import React, { useState } from 'react';
 import { Container } from '@/components/layout/Container';
@@ -54,11 +55,10 @@ function FeedPostCard({ post }: { post: { id: string, creatorId: string, product
         )}
 
         {/* Image */}
-        <img 
-          src={uniqueImages[currentIndex]} 
+        <Image src={uniqueImages[currentIndex]} 
           alt={post.description}
           className="w-full h-full object-cover opacity-90 transition-opacity duration-300 ease-out"
-        />
+         fill sizes="(max-width: 768px) 100vw, 50vw" />
 
         {/* Tap areas for navigation */}
         {uniqueImages.length > 1 && (

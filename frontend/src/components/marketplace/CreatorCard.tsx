@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { cn } from "@/lib/utils";
 import { CreatorAvatar } from "./CreatorAvatar";
@@ -15,7 +16,7 @@ export interface CreatorCardProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const CreatorCard = React.forwardRef<HTMLDivElement, CreatorCardProps>(
-  ({ className, id, name, handle, avatarUrl, coverUrl, bio, isVerified, followers, ...props }, ref) => {
+  ({ className, name, handle, avatarUrl, coverUrl, bio, isVerified, followers, ...props }, ref) => {
     return (
       <div
         ref={ref}
@@ -27,7 +28,7 @@ export const CreatorCard = React.forwardRef<HTMLDivElement, CreatorCardProps>(
       >
         <div className="h-24 w-full bg-surface overflow-hidden relative">
           {coverUrl && (
-            <img src={coverUrl} alt="Cover" className="h-full w-full object-cover opacity-80" loading="lazy" />
+            <Image src={coverUrl} alt="Cover" className="h-full w-full object-cover opacity-80" loading="lazy"  fill sizes="(max-width: 768px) 100vw, 50vw" />
           )}
         </div>
         

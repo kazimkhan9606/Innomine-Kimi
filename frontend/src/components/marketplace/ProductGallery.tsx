@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -31,10 +32,13 @@ export const ProductGallery = React.forwardRef<HTMLDivElement, ProductGalleryPro
     return (
       <div ref={ref} className={cn("flex flex-col gap-4", className)} {...props}>
         <div className="group relative aspect-square overflow-hidden rounded-xl bg-surface">
-          <img
+          <Image
             src={images[activeIndex]}
             alt={`${alt} ${activeIndex + 1}`}
             className="h-full w-full object-cover transition-opacity duration-300"
+            priority={true}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
           
           {images.length > 1 && (
@@ -70,7 +74,7 @@ export const ProductGallery = React.forwardRef<HTMLDivElement, ProductGalleryPro
                     : "border-transparent opacity-70 hover:opacity-100"
                 )}
               >
-                <img src={image} alt={`Thumbnail ${idx + 1}`} className="h-full w-full object-cover" />
+                <Image src={image} alt={`Thumbnail ${idx + 1}`} className="h-full w-full object-cover" fill sizes="80px" />
               </button>
             ))}
           </div>
