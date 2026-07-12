@@ -1,32 +1,37 @@
 import { Request, Response, NextFunction } from 'express';
-import { StatusCodes } from 'http-status-codes';
-import { config } from '../../config';
-import { logger } from '../utils/logger';
 import { ApiError } from '../utils/api-error';
 import { errorResponse } from '../utils/api-response';
+import { logger } from '../utils/logger';
 
 export const errorHandler = (
-  err: any,
+  err: Error | ApiError,
   req: Request,
   res: Response,
   _next: NextFunction
 ) => {
-  let error = err;
+  let statusCode = 500;
+  let message: string;
+  let errors: any[] = [];
 
-  if (!(error instanceof ApiError)) {
-    const statusCode =
-      error.statusCode || error instanceof mongoose.Error ? StatusCodes.BAD_REQUEST : StatusCodes.INTERNAL_SERVER_ERROR;
-    const message = error.message || StatusCodes[statusCode];
-    error = new ApiError(statusCode, message, false, err.stack);
+  if (err instanceof ApiError) {
+    statusCode = err.statusCode;
+    message = err.message;
+    errors = err.errors;
+  } else {
+    // Handling generic errors, e.g., syntax errors, unhandled rejections
+    message = err.message || 'An unexpected error occurred';
+    
+    // In development, you might want to send the stack trace
+    if (process.env.NODE_ENV === 'development') {
+      errors.push({ stack: err.stack });
+    }
   }
 
-  const { statusCode, message } = error;
-  
-  if (config.env === 'development') {
-    logger.error(error);
+  // Log the error
+  logger.error(`[Error] ${statusCode} - ${message} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
+  if (statusCode === 500 && process.env.NODE_ENV !== 'test') {
+    logger.error(err);
   }
 
-  res.status(statusCode).json(errorResponse(message));
+  res.status(statusCode).json(errorResponse(message, errors.length > 0 ? errors : undefined));
 };
-
-import mongoose from 'mongoose';

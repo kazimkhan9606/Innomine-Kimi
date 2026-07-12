@@ -1,9 +1,44 @@
 import { Router } from 'express';
-import { healthRoutes } from '../modules/health/health.routes';
 
 const router = Router();
 
-// API Version 1
-router.use('/health', healthRoutes);
+import { authRoutes } from '../modules/auth/routes/auth.routes';
+import { usersRoutes } from '../modules/users/routes/users.routes';
+import { innovatorsRoutes } from '../modules/innovators/routes/innovators.routes';
+import { productsRoutes } from '../modules/products/routes/products.routes';
+import { categoriesRoutes } from '../modules/categories/routes/categories.routes';
+import { wishlistRoutes } from '../modules/wishlist/routes/wishlist.routes';
+import { cartRoutes } from '../modules/cart/routes/cart.routes';
+import { ordersRoutes } from '../modules/orders/routes/orders.routes';
+import { paymentsRoutes } from '../modules/payments/routes/payments.routes';
+import { reviewsRoutes } from '../modules/reviews/routes/reviews.routes';
+import { commentsRoutes } from '../modules/comments/routes/comments.routes';
+import { feedRoutes } from '../modules/feed/routes/feed.routes';
+import { verificationRoutes } from '../modules/verification/routes/verification.routes';
+import { notificationsRoutes } from '../modules/notifications/routes/notifications.routes';
+import { analyticsRoutes } from '../modules/analytics/routes/analytics.routes';
+import { adminRoutes } from '../modules/admin/routes/admin.routes';
+import { dashboardRoutes } from '../modules/dashboard/routes/dashboard.routes';
+import { searchRoutes } from '../modules/search/routes/search.routes';
+
+// Module Routes
+router.use('/auth', authRoutes);
+router.use('/users', usersRoutes);
+router.use('/innovators', innovatorsRoutes);
+router.use('/products', productsRoutes);
+router.use('/categories', categoriesRoutes);
+router.use('/wishlist', wishlistRoutes);
+router.use('/cart', cartRoutes);
+router.use('/orders', ordersRoutes);
+router.use('/payments', paymentsRoutes);
+router.use('/reviews', reviewsRoutes);
+router.use('/comments', commentsRoutes);
+router.use('/feed', feedRoutes);
+router.use('/verification', verificationRoutes);
+router.use('/notifications', notificationsRoutes);
+router.use('/analytics', analyticsRoutes);
+router.use('/admin', adminRoutes);
+router.use('/dashboard', dashboardRoutes);
+router.use('/search', searchRoutes);
 
 export const apiRoutes = router;
