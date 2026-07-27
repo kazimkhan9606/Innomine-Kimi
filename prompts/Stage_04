@@ -1,0 +1,774 @@
+You are continuing development of the Innomine Premium Innovation Marketplace.
+
+IMPORTANT
+
+This project is already functional.
+
+Authentication is complete.
+Authorization is complete.
+MongoDB integration is complete.
+JWT is complete.
+Repository pattern is implemented.
+Logging is implemented.
+Validation is implemented.
+
+Do NOT modify or break any existing functionality.
+
+Maintain the existing architecture.
+
+=========================================================
+OBJECTIVE
+=========================================================
+
+Implement the complete Innovation Module.
+
+This is the central feature of the entire marketplace.
+
+Implement production-quality code only.
+
+=========================================================
+FOLDER STRUCTURE
+=========================================================
+
+Create
+
+src/modules/innovation
+
+Inside create
+
+controller/
+service/
+repository/
+model/
+interfaces/
+validation/
+routes/
+swagger/
+
+Follow the exact same architecture used in Auth Module.
+
+=========================================================
+CREATE COMPLETE INNOVATION MODEL
+=========================================================
+
+Implement a Mongoose model with:
+
+title
+slug
+shortDescription
+description
+category
+subcategory
+tags
+owner
+coverImage
+galleryImages
+videoUrl
+attachments
+
+visibility
+
+status
+
+pricingModel
+
+price
+
+currency
+
+licenseType
+
+githubUrl
+
+websiteUrl
+
+documentationUrl
+
+technologyStack
+
+difficulty
+
+estimatedDevelopmentTime
+
+likes
+
+bookmarks
+
+views
+
+downloads
+
+ratingAverage
+
+ratingCount
+
+commentsCount
+
+featured
+
+verified
+
+isDeleted
+
+publishedAt
+
+createdAt
+
+updatedAt
+
+=========================================================
+ENUMS
+=========================================================
+
+Create enums
+
+InnovationStatus
+
+DRAFT
+PUBLISHED
+UNDER_REVIEW
+REJECTED
+ARCHIVED
+
+Visibility
+
+PUBLIC
+PRIVATE
+
+PricingModel
+
+FREE
+PAID
+LICENSE
+
+Difficulty
+
+BEGINNER
+INTERMEDIATE
+ADVANCED
+
+=========================================================
+SCHEMA FEATURES
+=========================================================
+
+Slug generated automatically
+
+timestamps enabled
+
+soft delete support
+
+virtual id
+
+owner population
+
+text search support
+
+validation
+
+indexes
+
+=========================================================
+MONGOOSE INDEXES
+=========================================================
+
+title
+
+slug
+
+owner
+
+category
+
+status
+
+visibility
+
+featured
+
+publishedAt
+
+createdAt
+
+text index on
+
+title
+
+description
+
+tags
+
+technologyStack
+
+=========================================================
+RELATIONS
+=========================================================
+
+Innovation references User model.
+
+Populate
+
+name
+
+profileImage
+
+role
+
+only.
+
+Never expose password or refresh token.
+
+=========================================================
+VALIDATION
+=========================================================
+
+Implement Zod validation for
+
+Create Innovation
+
+Update Innovation
+
+Delete Innovation
+
+Publish
+
+Archive
+
+Pagination
+
+Filtering
+
+Search
+
+Sorting
+
+=========================================================
+QUALITY
+=========================================================
+
+Strict TypeScript
+
+No any
+
+No duplicated logic
+
+Repository pattern
+
+Enterprise coding style
+
+Do not break build
+
+Do not modify unrelated modules
+
+At the end verify
+
+build
+
+lint
+
+typecheck
+
+You are continuing development of the Innomine Premium Innovation Marketplace.
+
+IMPORTANT
+
+DO NOT modify existing architecture.
+DO NOT rewrite authentication.
+DO NOT modify existing middleware unless absolutely necessary.
+DO NOT change response format.
+DO NOT change repository pattern.
+DO NOT change folder structure.
+
+Everything implemented previously must continue working.
+
+=========================================================
+CURRENT PROJECT STATUS
+=========================================================
+
+Completed:
+
+✔ Authentication
+✔ JWT
+✔ Authorization
+✔ MongoDB
+✔ Validation
+✔ Repository Pattern
+✔ Logging
+✔ Error Handling
+✔ Swagger Infrastructure
+✔ Innovation Module Folder Structure
+✔ Innovation Model
+✔ Innovation Repository
+✔ Innovation Service
+✔ Innovation Controller
+✔ Innovation Routes
+✔ Innovation Validation
+
+Continue from here.
+
+=========================================================
+OBJECTIVE
+=========================================================
+
+Convert the Innovation module into a complete production-ready Marketplace CRUD module.
+
+Implement everything below in one execution.
+
+=========================================================
+1. COMPLETE CRUD
+=========================================================
+
+Implement fully working APIs:
+
+POST /api/v1/innovations
+
+GET /api/v1/innovations
+
+GET /api/v1/innovations/:id
+
+PATCH /api/v1/innovations/:id
+
+DELETE /api/v1/innovations/:id
+
+Responses must follow existing response helpers.
+
+=========================================================
+2. OWNER AUTHORIZATION
+=========================================================
+
+Only authenticated users may create innovations.
+
+Only the owner may:
+
+Edit
+
+Delete
+
+Archive
+
+Publish
+
+Admins bypass ownership.
+
+Moderators may verify innovations.
+
+Return proper HTTP status codes.
+
+=========================================================
+3. PUBLISHING WORKFLOW
+=========================================================
+
+Implement endpoints
+
+POST /innovations/:id/publish
+
+POST /innovations/:id/archive
+
+POST /innovations/:id/verify
+
+Publishing automatically
+
+changes status
+
+sets publishedAt
+
+cannot publish deleted innovations
+
+cannot archive already archived innovations
+
+=========================================================
+4. SEARCH ENGINE
+=========================================================
+
+Implement
+
+keyword search
+
+title search
+
+description search
+
+technology search
+
+tags search
+
+category search
+
+owner search
+
+status search
+
+featured search
+
+verified search
+
+difficulty search
+
+=========================================================
+5. FILTERING
+=========================================================
+
+Support query parameters
+
+category
+
+status
+
+visibility
+
+difficulty
+
+featured
+
+verified
+
+owner
+
+minPrice
+
+maxPrice
+
+createdAfter
+
+createdBefore
+
+=========================================================
+6. SORTING
+=========================================================
+
+Support
+
+createdAt
+
+updatedAt
+
+views
+
+likes
+
+bookmarks
+
+ratingAverage
+
+price
+
+title
+
+publishedAt
+
+Ascending and descending.
+
+=========================================================
+7. PAGINATION
+=========================================================
+
+Implement
+
+page
+
+limit
+
+skip
+
+totalItems
+
+totalPages
+
+currentPage
+
+hasNext
+
+hasPrevious
+
+=========================================================
+8. SLUG SUPPORT
+=========================================================
+
+Implement slug generation.
+
+Unique slug.
+
+Find innovation by slug.
+
+Redirect duplicate titles by appending numbers.
+
+=========================================================
+9. VIEW COUNTER
+=========================================================
+
+Automatically increment views
+
+when GET /innovations/:id
+
+is called.
+
+Avoid duplicate logic.
+
+=========================================================
+10. LIKE SYSTEM
+=========================================================
+
+Implement
+
+POST /innovations/:id/like
+
+Toggle like.
+
+Prevent duplicate likes.
+
+Store relation efficiently.
+
+Update like count.
+
+=========================================================
+11. BOOKMARK SYSTEM
+=========================================================
+
+Implement
+
+POST /innovations/:id/bookmark
+
+Toggle bookmark.
+
+Prevent duplicates.
+
+Update bookmark count.
+
+=========================================================
+12. REPOSITORY
+=========================================================
+
+Repository methods
+
+create
+
+update
+
+delete
+
+findById
+
+findBySlug
+
+findMany
+
+publish
+
+archive
+
+verify
+
+incrementViews
+
+toggleLike
+
+toggleBookmark
+
+search
+
+filter
+
+=========================================================
+13. SERVICE
+=========================================================
+
+Business logic only.
+
+Validation
+
+Ownership
+
+Authorization
+
+Duplicate detection
+
+Publishing logic
+
+Search building
+
+Pagination
+
+=========================================================
+14. CONTROLLER
+=========================================================
+
+Controllers remain thin.
+
+Only call services.
+
+No database logic.
+
+=========================================================
+15. VALIDATION
+=========================================================
+
+Extend Zod schemas.
+
+Validate
+
+query params
+
+pagination
+
+sorting
+
+filters
+
+IDs
+
+slug
+
+=========================================================
+16. SWAGGER
+=========================================================
+
+Document every endpoint.
+
+Include
+
+examples
+
+security
+
+parameters
+
+responses
+
+request bodies
+
+=========================================================
+17. LOGGING
+=========================================================
+
+Log
+
+create
+
+update
+
+delete
+
+publish
+
+archive
+
+verify
+
+like
+
+bookmark
+
+=========================================================
+18. SEED DATA
+=========================================================
+
+Create seed script.
+
+Generate
+
+20 innovations
+
+Multiple categories
+
+Different owners
+
+Featured innovations
+
+Draft innovations
+
+Published innovations
+
+Archived innovations
+
+Realistic descriptions
+
+Tags
+
+Technology stacks
+
+=========================================================
+19. DOCUMENTATION
+=========================================================
+
+Generate
+
+INNOVATION_API.md
+
+Include
+
+Endpoints
+
+Examples
+
+Filters
+
+Sorting
+
+Pagination
+
+Authentication
+
+=========================================================
+20. QUALITY REQUIREMENTS
+=========================================================
+
+Enterprise code only.
+
+Strict TypeScript.
+
+No "any".
+
+Repository Pattern.
+
+No duplicated logic.
+
+No dead code.
+
+No unnecessary dependencies.
+
+Maintain clean architecture.
+
+Do not modify unrelated modules.
+
+=========================================================
+FINAL VERIFICATION
+=========================================================
+
+Internally verify before finishing:
+
+✔ npm run build passes
+
+✔ npm run lint passes
+
+✔ npm run type-check passes
+
+✔ Backend starts successfully
+
+✔ MongoDB connects
+
+✔ Existing authentication still works
+
+✔ Existing protected routes still work
+
+✔ Innovation CRUD works
+
+✔ Search works
+
+✔ Filters work
+
+✔ Pagination works
+
+✔ Sorting works
+
+✔ Like system works
+
+✔ Bookmark system works
+
+✔ Swagger documents all Innovation endpoints
+
+Return a concise implementation report listing:
+
+- Files created
+- Files modified
+- APIs added
+- Features implemented
+- Verification results

@@ -1,15 +1,11 @@
-import { Router, Request, Response } from 'express';
-import { successResponse } from '../../../shared/utils/api-response';
+import { Router } from 'express';
+import { getHealth, getDatabaseHealth, getApplicationHealth, getVersion } from '../health.controller';
 
 const router = Router();
 
-router.get('/live', (req: Request, res: Response) => {
-  res.status(200).json(successResponse({ status: 'OK' }, 'Server is alive'));
-});
-
-router.get('/ready', (req: Request, res: Response) => {
-  // In a real scenario, this might check DB connection or cache status
-  res.status(200).json(successResponse({ status: 'OK' }, 'Server is ready'));
-});
+router.get('/', getHealth);
+router.get('/database', getDatabaseHealth);
+router.get('/application', getApplicationHealth);
+router.get('/version', getVersion);
 
 export const healthRoutes = router;

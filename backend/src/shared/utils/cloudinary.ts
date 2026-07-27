@@ -1,6 +1,6 @@
 import { v2 as cloudinary } from 'cloudinary';
 import { config } from '../../config';
-import { UploadError } from './api-error';
+import { UploadError } from '../errors';
 
 if (config.cloudinary.cloudName && config.cloudinary.apiKey && config.cloudinary.apiSecret) {
   cloudinary.config({

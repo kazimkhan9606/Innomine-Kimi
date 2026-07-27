@@ -1,5 +1,5 @@
 import multer from 'multer';
-import { UploadError } from '../utils/api-error';
+import { UploadError } from '../errors';
 import { config } from '../../config';
 
 // Memory storage is preferred when uploading straight to Cloudinary

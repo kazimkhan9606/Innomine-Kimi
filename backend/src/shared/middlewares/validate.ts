@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { ZodSchema, ZodError } from 'zod';
 import { StatusCodes } from 'http-status-codes';
-import { errorResponse } from '../utils/api-response';
+import { errorResponse } from '../utils/response';
 
 export const validate = (schema: ZodSchema) => {
   return async (req: Request, res: Response, next: NextFunction) => {

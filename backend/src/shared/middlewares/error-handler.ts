@@ -1,10 +1,10 @@
 import { Request, Response, NextFunction } from 'express';
-import { ApiError } from '../utils/api-error';
-import { errorResponse } from '../utils/api-response';
+import { AppError } from '../errors';
+import { errorResponse } from '../utils/response';
 import { logger } from '../utils/logger';
 
 export const errorHandler = (
-  err: Error | ApiError,
+  err: Error | AppError,
   req: Request,
   res: Response,
   _next: NextFunction
@@ -13,7 +13,9 @@ export const errorHandler = (
   let message: string;
   let errors: any[] = [];
 
-  if (err instanceof ApiError) {
+  logger.error(`[Error] ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
+
+  if (err instanceof AppError) {
     statusCode = err.statusCode;
     message = err.message;
     errors = err.errors;

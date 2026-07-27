@@ -8,9 +8,14 @@ export interface PaginationOptions {
 export interface PaginatedResult<T> {
   items: T[];
   total: number;
+  totalItems: number;
   page: number;
+  currentPage: number;
   limit: number;
+  skip: number;
   totalPages: number;
+  hasNext: boolean;
+  hasPrevious: boolean;
 }
 
 export const getPaginationData = (options: PaginationOptions, defaultLimit = 10) => {
@@ -34,11 +39,18 @@ export const createPaginatedResponse = <T>(
   page: number,
   limit: number
 ): PaginatedResult<T> => {
+  const totalPages = Math.ceil(total / limit);
+  const skip = (page - 1) * limit;
   return {
     items,
     total,
+    totalItems: total,
     page,
+    currentPage: page,
     limit,
-    totalPages: Math.ceil(total / limit),
+    skip,
+    totalPages,
+    hasNext: page < totalPages,
+    hasPrevious: page > 1,
   };
 };

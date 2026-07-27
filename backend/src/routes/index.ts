@@ -4,6 +4,7 @@ const router = Router();
 
 import { authRoutes } from '../modules/auth/routes/auth.routes';
 import { usersRoutes } from '../modules/users/routes/users.routes';
+import { innovationRoutes } from '../modules/innovation/routes/innovation.routes';
 import { innovatorsRoutes } from '../modules/innovators/routes/innovators.routes';
 import { productsRoutes } from '../modules/products/routes/products.routes';
 import { categoriesRoutes } from '../modules/categories/routes/categories.routes';
@@ -24,6 +25,8 @@ import { searchRoutes } from '../modules/search/routes/search.routes';
 // Module Routes
 router.use('/auth', authRoutes);
 router.use('/users', usersRoutes);
+router.use('/innovations', innovationRoutes);
+router.use('/innovation', innovationRoutes);
 router.use('/innovators', innovatorsRoutes);
 router.use('/products', productsRoutes);
 router.use('/categories', categoriesRoutes);

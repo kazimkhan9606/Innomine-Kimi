@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import { config } from '../../config';
-import { AuthenticationError } from './api-error';
+import { AuthenticationError } from '../errors';
 
 export interface TokenPayload {
   userId: string;
