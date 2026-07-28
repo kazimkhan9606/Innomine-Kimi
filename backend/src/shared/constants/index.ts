@@ -67,3 +67,13 @@ export const MESSAGES = {
   NOT_FOUND: 'Resource not found',
   INTERNAL_ERROR: 'An unexpected error occurred',
 } as const;
+
+export const DEFAULT_VALUES = {
+  SORT_BY: 'createdAt',
+  SORT_ORDER: 'desc',
+  USER_ROLE: 'BUYER',
+  INNOVATION_STATUS: 'DRAFT',
+  VISIBILITY: 'PUBLIC',
+  CURRENCY: 'USD',
+} as const;
+

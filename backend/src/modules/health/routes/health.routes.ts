@@ -1,11 +1,22 @@
 import { Router } from 'express';
-import { getHealth, getDatabaseHealth, getApplicationHealth, getVersion } from '../health.controller';
+import {
+  getHealth,
+  getDatabaseHealth,
+  getApplicationHealth,
+  getVersion,
+} from '../health.controller';
 
-const router = Router();
+const healthRouter = Router();
 
-router.get('/', getHealth);
-router.get('/database', getDatabaseHealth);
-router.get('/application', getApplicationHealth);
-router.get('/version', getVersion);
+healthRouter.get('/', getHealth);
+healthRouter.get('/health', getHealth);
+healthRouter.get('/database', getDatabaseHealth);
+healthRouter.get('/health/database', getDatabaseHealth);
+healthRouter.get('/application', getApplicationHealth);
+healthRouter.get('/version', getVersion);
 
-export const healthRoutes = router;
+const versionRouter = Router();
+versionRouter.get('/', getVersion);
+
+export const healthRoutes = healthRouter;
+export const versionRoutes = versionRouter;

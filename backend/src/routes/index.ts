@@ -21,8 +21,11 @@ import { analyticsRoutes } from '../modules/analytics/routes/analytics.routes';
 import { adminRoutes } from '../modules/admin/routes/admin.routes';
 import { dashboardRoutes } from '../modules/dashboard/routes/dashboard.routes';
 import { searchRoutes } from '../modules/search/routes/search.routes';
+import { healthRoutes, versionRoutes } from '../modules/health/routes/health.routes';
 
 // Module Routes
+router.use('/health', healthRoutes);
+router.use('/version', versionRoutes);
 router.use('/auth', authRoutes);
 router.use('/users', usersRoutes);
 router.use('/innovations', innovationRoutes);

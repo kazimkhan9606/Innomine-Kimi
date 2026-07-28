@@ -13,8 +13,9 @@
     "paths": {
       "@/*": ["src/*"]
     },
+    "types": ["jest", "node"],
     "ignoreDeprecations": "6.0"
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
 }

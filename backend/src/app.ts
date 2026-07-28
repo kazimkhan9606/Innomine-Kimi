@@ -3,6 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import compression from 'compression';
+import { config } from './config';
 import { corsOptions } from './config/cors';
 import { apiRateLimiter } from './shared/middlewares/rate-limiter';
 import { errorHandler } from './shared/middlewares/error-handler';
@@ -22,20 +23,23 @@ app.use(requestIdMiddleware);
 
 // 2. Request Logging
 morgan.token('id', (req: Request) => req.id || '-');
-const morganFormat = process.env.NODE_ENV === 'production' 
-  ? ':id :remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent" - :response-time ms'
-  : ':id :method :url :status :response-time ms - :res[content-length]';
+morgan.token('ip', (req: Request) => req.ip || req.socket.remoteAddress || '-');
+const morganFormat = ':id :ip :method :url :status :response-time ms - :res[content-length]';
 
-app.use(morgan(morganFormat, {
-  stream: {
-    write: (message) => logger.info(message.trim()),
-  },
-}));
+app.use(
+  morgan(morganFormat, {
+    stream: {
+      write: (message) => logger.info(message.trim()),
+    },
+  })
+);
 
 // 3. Security Middlewares
-app.use(helmet({
-  contentSecurityPolicy: process.env.NODE_ENV === 'production' ? undefined : false,
-}));
+app.use(
+  helmet({
+    contentSecurityPolicy: config.env === 'production' ? undefined : false,
+  })
+);
 
 // 4. Compression
 app.use(compression());
@@ -56,8 +60,11 @@ import { swaggerSpec } from './config/swagger';
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // 8. API Routes
-import { healthRoutes } from './modules/health/routes/health.routes';
+import { healthRoutes, versionRoutes } from './modules/health/routes/health.routes';
+app.use('/health', healthRoutes);
+app.use('/version', versionRoutes);
 app.use('/api/v1/health', healthRoutes);
+app.use('/api/v1/version', versionRoutes);
 app.use('/api/v1', apiRoutes);
 
 // 9. Error Handling
