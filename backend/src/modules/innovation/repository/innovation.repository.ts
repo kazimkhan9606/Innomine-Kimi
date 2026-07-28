@@ -1,4 +1,5 @@
 import { Innovation } from '../model/innovation.model';
+import { InnovationView } from '../model/innovation-view.model';
 import { IInnovation, InnovationStatus } from '../interfaces/innovation.interface';
 
 const OWNER_POPULATE_FIELDS = 'name profileImage role';
@@ -238,6 +239,92 @@ class InnovationRepository {
       innovation: updatedDoc,
       bookmarked: !isBookmarked,
       bookmarksCount: updatedDoc.bookmarks,
+    };
+  }
+
+  async checkLikeStatus(id: string, userId: string): Promise<boolean> {
+    const doc = await Innovation.findById(id).select('+likedBy').lean().exec();
+    if (!doc) return false;
+    const likedBy = ((doc as any).likedBy || []).map((u: any) => u.toString());
+    return likedBy.includes(userId);
+  }
+
+  async getLikesCount(id: string): Promise<number> {
+    const doc = await Innovation.findById(id).select('likes').lean().exec();
+    return (doc as any)?.likes || 0;
+  }
+
+  async removeLike(id: string, userId: string): Promise<{ innovation: IInnovation; liked: boolean; likesCount: number } | null> {
+    const doc = await Innovation.findById(id).select('+likedBy').exec();
+    if (!doc) return null;
+    const likedBy = (doc.likedBy || []).map((u: any) => u.toString());
+    if (!likedBy.includes(userId)) {
+      return { innovation: doc, liked: false, likesCount: doc.likes || 0 };
+    }
+    const updatedDoc = await Innovation.findByIdAndUpdate(
+      id,
+      { $pull: { likedBy: userId }, $inc: { likes: -1 } },
+      { new: true }
+    ).populate('owner', OWNER_POPULATE_FIELDS).exec();
+    if (!updatedDoc) return null;
+    return { innovation: updatedDoc, liked: false, likesCount: Math.max(0, updatedDoc.likes || 0) };
+  }
+
+  async trackView(
+    innovationId: string,
+    ipHash: string,
+    viewerId?: string
+  ): Promise<{ views: number; uniqueView: boolean }> {
+    const thirtyMinutesAgo = new Date(Date.now() - 30 * 60 * 1000);
+    const query: Record<string, any> = {
+      innovation: innovationId,
+      ...(viewerId ? { viewer: viewerId } : { ipHash }),
+    };
+
+    const existingView = await InnovationView.findOne(query).exec();
+    let uniqueView = false;
+
+    if (!existingView) {
+      uniqueView = true;
+      await InnovationView.create({
+        innovation: innovationId,
+        viewer: viewerId,
+        ipHash,
+        lastViewedAt: new Date(),
+        viewCount: 1,
+      });
+      await Innovation.findByIdAndUpdate(innovationId, { $inc: { views: 1 } });
+    } else if (existingView.lastViewedAt < thirtyMinutesAgo) {
+      existingView.lastViewedAt = new Date();
+      existingView.viewCount += 1;
+      await existingView.save();
+      await Innovation.findByIdAndUpdate(innovationId, { $inc: { views: 1 } });
+    }
+
+    const doc = await Innovation.findById(innovationId).select('views').lean().exec();
+    return { views: (doc as any)?.views || 0, uniqueView };
+  }
+
+  async getViewStats(innovationId: string): Promise<{
+    totalViews: number;
+    uniqueViews: number;
+    anonymousViews: number;
+    loggedInViews: number;
+  }> {
+    const doc = await Innovation.findById(innovationId).select('views').lean().exec();
+    const totalViews = (doc as any)?.views || 0;
+    const uniqueViews = await InnovationView.countDocuments({ innovation: innovationId });
+    const loggedInViews = await InnovationView.countDocuments({
+      innovation: innovationId,
+      viewer: { $exists: true, $ne: null },
+    });
+    const anonymousViews = Math.max(0, uniqueViews - loggedInViews);
+
+    return {
+      totalViews,
+      uniqueViews,
+      anonymousViews,
+      loggedInViews,
     };
   }
 

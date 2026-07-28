@@ -53,3 +53,26 @@ export const authenticate = async (
     next(error);
   }
 };
+
+export const optionalAuthenticate = async (
+  req: AuthRequest,
+  _res: Response,
+  next: NextFunction
+): Promise<void> => {
+  try {
+    const authHeader = req.headers.authorization;
+    if (authHeader && authHeader.startsWith('Bearer ')) {
+      const token = authHeader.split(' ')[1];
+      if (token) {
+        const decoded = verifyAccessToken(token);
+        const user = await userRepository.findById(decoded.userId);
+        if (user && user.isActive) {
+          req.user = user;
+        }
+      }
+    }
+    next();
+  } catch (_err) {
+    next();
+  }
+};

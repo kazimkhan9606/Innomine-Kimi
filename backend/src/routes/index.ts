@@ -34,6 +34,7 @@ router.use('/innovators', innovatorsRoutes);
 router.use('/products', productsRoutes);
 router.use('/categories', categoriesRoutes);
 router.use('/wishlist', wishlistRoutes);
+router.use('/bookmarks', wishlistRoutes);
 router.use('/cart', cartRoutes);
 router.use('/orders', ordersRoutes);
 router.use('/payments', paymentsRoutes);

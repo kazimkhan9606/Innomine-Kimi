@@ -130,6 +130,53 @@ class InnovationController {
     }
   }
 
+  async unlike(req: AuthRequest, res: Response, next: NextFunction) {
+    try {
+      const data = await innovationService.unlike(req.params.id as string, req.user!.id);
+      res.status(200).json(successResponse(data, 'Innovation unliked successfully'));
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  async checkLikeStatus(req: AuthRequest, res: Response, next: NextFunction) {
+    try {
+      const data = await innovationService.checkLikeStatus(req.params.id as string, req.user!.id);
+      res.status(200).json(successResponse(data, 'Like status checked successfully'));
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  async getLikesCount(req: AuthRequest, res: Response, next: NextFunction) {
+    try {
+      const data = await innovationService.getLikesCount(req.params.id as string);
+      res.status(200).json(successResponse(data, 'Likes count retrieved successfully'));
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  async trackView(req: AuthRequest, res: Response, next: NextFunction) {
+    try {
+      const ip = (req.headers['x-forwarded-for'] as string) || req.socket.remoteAddress || '0.0.0.0';
+      const viewerId = req.user?.id;
+      const data = await innovationService.trackView(req.params.id as string, ip, viewerId);
+      res.status(200).json(successResponse(data, 'View tracked successfully'));
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  async getViewStats(req: AuthRequest, res: Response, next: NextFunction) {
+    try {
+      const data = await innovationService.getViewStats(req.params.id as string);
+      res.status(200).json(successResponse(data, 'View statistics retrieved successfully'));
+    } catch (error) {
+      next(error);
+    }
+  }
+
   async bookmark(req: AuthRequest, res: Response, next: NextFunction) {
     try {
       const data = await innovationService.toggleBookmark(

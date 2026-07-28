@@ -48,5 +48,26 @@ describe('Innovation Module Endpoints', () => {
       expect(res.status).toBe(400); // Mongoose ObjectId regex/zod validation returns 400
       expect(res.body.success).toBe(false);
     });
+
+    it('should return 401 when toggling like without authentication', async () => {
+      const res = await request(app).post('/api/v1/innovations/507f1f77bcf86cd799439011/like');
+      expect(res.status).toBe(401);
+    });
+
+    it('should allow counting likes publicly', async () => {
+      jest.spyOn(innovationService, 'getLikesCount').mockResolvedValueOnce({ count: 15 });
+      const res = await request(app).get('/api/v1/innovations/507f1f77bcf86cd799439011/likes/count');
+      expect(res.status).toBe(200);
+      expect(res.body.success).toBe(true);
+      expect(res.body.data.count).toBe(15);
+    });
+
+    it('should allow tracking views publicly or anonymously', async () => {
+      jest.spyOn(innovationService, 'trackView').mockResolvedValueOnce({ views: 42, uniqueView: true });
+      const res = await request(app).post('/api/v1/innovations/507f1f77bcf86cd799439011/view');
+      expect(res.status).toBe(200);
+      expect(res.body.success).toBe(true);
+      expect(res.body.data.views).toBe(42);
+    });
   });
 });

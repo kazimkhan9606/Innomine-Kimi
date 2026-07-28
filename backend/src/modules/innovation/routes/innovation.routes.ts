@@ -1,7 +1,7 @@
 import { Router, Response, NextFunction } from 'express';
 import { innovationController } from '../controller/innovation.controller';
 import { validate } from '../../../shared/middlewares/validate';
-import { authenticate } from '../../../shared/middlewares/authenticate';
+import { authenticate, optionalAuthenticate } from '../../../shared/middlewares/authenticate';
 import { verifyAccessToken } from '../../../shared/utils/jwt';
 import { userRepository } from '../../users/repository/user.repository';
 import { AuthRequest } from '../../../shared/interfaces/auth-request.interface';
@@ -59,6 +59,13 @@ router.post('/:id/verify', authenticate, validate(verifyInnovationSchema), innov
 router.patch('/:id/verify', authenticate, validate(verifyInnovationSchema), innovationController.verify);
 
 router.post('/:id/like', authenticate, validate(likeInnovationSchema), innovationController.like);
+router.delete('/:id/like', authenticate, validate(likeInnovationSchema), innovationController.unlike);
+router.get('/:id/likes/count', validate(likeInnovationSchema), innovationController.getLikesCount);
+router.get('/:id/likes/status', authenticate, validate(likeInnovationSchema), innovationController.checkLikeStatus);
+
+router.post('/:id/view', optionalAuthenticate, validate(likeInnovationSchema), innovationController.trackView);
+router.get('/:id/views/stats', authenticate, validate(likeInnovationSchema), innovationController.getViewStats);
+
 router.post('/:id/bookmark', authenticate, validate(bookmarkInnovationSchema), innovationController.bookmark);
 
 export const innovationRoutes = router;

@@ -1,3 +1,4 @@
+import crypto from 'crypto';
 import { innovationRepository } from '../repository/innovation.repository';
 import {
   IInnovation,
@@ -306,6 +307,55 @@ class InnovationService {
 
     logger.info(`Innovation like toggled: ${id} by user: ${currentUserId}`);
     return result;
+  }
+
+  async unlike(
+    id: string,
+    currentUserId: string
+  ): Promise<{ innovation: IInnovation; liked: boolean; likesCount: number }> {
+    const innovation = await innovationRepository.findById(id);
+    if (!innovation) {
+      throw new NotFoundError('Innovation not found');
+    }
+    const result = await innovationRepository.removeLike(id, currentUserId);
+    if (!result) {
+      throw new NotFoundError('Innovation not found during unlike');
+    }
+    logger.info(`Innovation unliked: ${id} by user: ${currentUserId}`);
+    return result;
+  }
+
+  async checkLikeStatus(id: string, currentUserId: string): Promise<{ isLiked: boolean }> {
+    const isLiked = await innovationRepository.checkLikeStatus(id, currentUserId);
+    return { isLiked };
+  }
+
+  async getLikesCount(id: string): Promise<{ count: number }> {
+    const count = await innovationRepository.getLikesCount(id);
+    return { count };
+  }
+
+  async trackView(
+    id: string,
+    ipAddress: string,
+    viewerId?: string
+  ): Promise<{ views: number; uniqueView: boolean }> {
+    const innovation = await innovationRepository.findById(id);
+    if (!innovation) {
+      throw new NotFoundError('Innovation not found');
+    }
+    const ipHash = crypto.createHash('sha256').update(ipAddress || '0.0.0.0').digest('hex');
+    const result = await innovationRepository.trackView(id, ipHash, viewerId);
+    return result;
+  }
+
+  async getViewStats(id: string) {
+    const innovation = await innovationRepository.findById(id);
+    if (!innovation) {
+      throw new NotFoundError('Innovation not found');
+    }
+    const stats = await innovationRepository.getViewStats(id);
+    return stats;
   }
 
   async toggleBookmark(

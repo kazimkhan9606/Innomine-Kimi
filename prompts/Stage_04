@@ -772,3 +772,504 @@ Return a concise implementation report listing:
 - APIs added
 - Features implemented
 - Verification results
+
+
+# STAGE 4B — FINAL BACKEND INFRASTRUCTURE AUDIT & COMPLETION (MASTER PROMPT)
+
+You are continuing the Innomine project.
+
+IMPORTANT:
+This is NOT a refactor.
+This is NOT a redesign.
+This is NOT a rewrite.
+
+DO NOT change folder structure.
+DO NOT rename files.
+DO NOT change existing APIs.
+DO NOT break frontend compatibility.
+DO NOT remove working functionality.
+DO NOT modify authentication flow.
+DO NOT modify Innovation module behaviour.
+
+Your job is ONLY to finish every incomplete backend infrastructure component that should already exist.
+
+==================================================
+PROJECT GOAL
+==================================================
+
+Complete ALL missing backend infrastructure so the backend becomes production-ready before continuing with Marketplace development.
+
+The following already work and MUST remain untouched:
+
+✔ Authentication
+✔ JWT
+✔ MongoDB
+✔ Innovation APIs
+✔ Repository pattern
+✔ Service layer
+✔ Validation
+✔ Error handling
+✔ Build
+✔ Type Check
+✔ Lint
+
+Only complete the missing infrastructure.
+
+==================================================
+PART 1 — HEALTH MODULE
+==================================================
+
+Create or complete a dedicated Health module.
+
+If missing, create:
+
+src/modules/health/
+
+Implement:
+
+health.controller.ts
+
+health.routes.ts
+
+health.service.ts
+
+Expose these endpoints:
+
+GET /health
+
+Response:
+
+{
+  success: true,
+  service: "Innomine Backend",
+  uptime,
+  timestamp,
+  environment,
+  nodeVersion
+}
+
+--------------------------------
+
+GET /health/database
+
+Return:
+
+database status
+
+Mongo connection state
+
+database name
+
+host
+
+latency if possible
+
+--------------------------------
+
+GET /version
+
+Return
+
+application version
+
+package version
+
+API version
+
+build timestamp
+
+environment
+
+==================================================
+PART 2 — REGISTER ROUTES
+==================================================
+
+Verify every route is actually mounted.
+
+Ensure app.ts loads
+
+/api/v1
+
+Ensure routes/index.ts loads
+
+Health
+
+Auth
+
+Innovation
+
+future modules
+
+Verify:
+
+GET /health
+
+GET /health/database
+
+GET /version
+
+actually work.
+
+==================================================
+PART 3 — SWAGGER
+==================================================
+
+Swagger currently loads
+
+BUT
+
+shows
+
+"No operations defined in spec."
+
+Fix completely.
+
+Generate proper OpenAPI documentation.
+
+Document ALL existing endpoints.
+
+Authentication
+
+Register
+
+Login
+
+Refresh
+
+Logout
+
+Me
+
+Change Password
+
+Innovations
+
+Health
+
+Version
+
+Database Health
+
+Use OpenAPI 3.1.
+
+Bearer Authentication.
+
+Schemas.
+
+Examples.
+
+Descriptions.
+
+Tags.
+
+Responses.
+
+Error responses.
+
+Request body definitions.
+
+Swagger should become fully browsable.
+
+==================================================
+PART 4 — REQUEST PIPELINE
+==================================================
+
+Verify middleware order.
+
+Request ID
+
+Helmet
+
+Compression
+
+CORS
+
+Morgan
+
+JSON parser
+
+Rate Limit
+
+Validation
+
+Authentication
+
+Routes
+
+404
+
+Global Error Handler
+
+Fix if incorrect.
+
+==================================================
+PART 5 — ERROR SYSTEM
+==================================================
+
+Audit entire backend.
+
+Ensure every controller uses
+
+next(error)
+
+or
+
+asyncHandler
+
+No unhandled promise rejection.
+
+No duplicated try/catch.
+
+No raw
+
+res.status(...)
+
+inside business logic.
+
+Use centralized AppError.
+
+==================================================
+PART 6 — LOGGER
+==================================================
+
+Improve logger.
+
+Every request logs
+
+method
+
+URL
+
+status
+
+response time
+
+request id
+
+IP
+
+Every server start logs
+
+Mongo
+
+Port
+
+Environment
+
+Every crash logs
+
+full stack
+
+==================================================
+PART 7 — CONFIG VALIDATION
+==================================================
+
+Audit config.
+
+Every environment variable must be validated with Zod.
+
+No process.env access outside config.
+
+Required:
+
+PORT
+
+NODE_ENV
+
+MONGO_URI
+
+JWT_SECRET
+
+JWT_REFRESH_SECRET
+
+JWT_EXPIRES_IN
+
+JWT_REFRESH_EXPIRES_IN
+
+FRONTEND_URL
+
+CLOUDINARY vars
+
+==================================================
+PART 8 — RESPONSE FORMAT
+==================================================
+
+Ensure EVERY endpoint returns identical format.
+
+Success
+
+{
+ success,
+ message,
+ data,
+ timestamp
+}
+
+Errors
+
+{
+ success,
+ message,
+ errors,
+ timestamp
+}
+
+No endpoint should return inconsistent JSON.
+
+==================================================
+PART 9 — CONSTANTS
+==================================================
+
+Move remaining magic numbers.
+
+Status codes
+
+Roles
+
+Pagination
+
+Limits
+
+Messages
+
+Cookie names
+
+JWT names
+
+Default values
+
+==================================================
+PART 10 — TESTING
+==================================================
+
+Complete Jest configuration.
+
+Ensure Supertest configured.
+
+Create sample tests for
+
+Health
+
+Register
+
+Login
+
+Innovation list
+
+No failing tests.
+
+==================================================
+PART 11 — DOCUMENTATION
+==================================================
+
+Generate or improve
+
+README.md
+
+API.md
+
+ENV.md
+
+Include:
+
+installation
+
+development
+
+production
+
+folder structure
+
+available scripts
+
+API list
+
+environment variables
+
+==================================================
+PART 12 — FINAL BACKEND AUDIT
+==================================================
+
+Search entire backend.
+
+Fix
+
+unused imports
+
+duplicate code
+
+dead code
+
+duplicate interfaces
+
+duplicate constants
+
+duplicate middleware
+
+duplicate validators
+
+duplicate response helpers
+
+==================================================
+PART 13 — VERIFICATION
+==================================================
+
+Before finishing verify internally:
+
+✓ npm run build
+
+✓ npm run lint
+
+✓ npm run type-check
+
+✓ npm run dev
+
+✓ Swagger loads
+
+✓ Swagger contains all endpoints
+
+✓ GET /health works
+
+✓ GET /health/database works
+
+✓ GET /version works
+
+✓ Register works
+
+✓ Login works
+
+✓ Protected route works
+
+✓ Innovation APIs work
+
+✓ No breaking changes
+
+==================================================
+IMPORTANT
+==================================================
+
+Do NOT stop after partially implementing anything.
+
+Do NOT leave TODOs.
+
+Do NOT leave placeholder code.
+
+Do NOT say "can be added later."
+
+Implement every missing infrastructure component completely.
+
+Preserve every existing feature.
+
+Do not modify frontend code.
+
+At the end provide a detailed implementation report listing:
+
+• Files created
+• Files modified
+• Routes added
+• Swagger coverage
+• Health APIs
+• Tests added
+• Infrastructure improvements
+• Verification results
+• Any remaining blockers (only if absolutely unavoidable)

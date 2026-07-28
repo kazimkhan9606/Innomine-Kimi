@@ -1,0 +1,607 @@
+# STAGE 05 — MARKETPLACE CORE (COMPLETE IMPLEMENTATION)
+
+## OBJECTIVE
+
+Continue the Innomine project from the current completed state.
+
+DO NOT regenerate existing code.
+
+DO NOT rewrite completed modules.
+
+DO NOT modify authentication, innovation module, health module, swagger setup, project architecture, configuration, or existing APIs unless absolutely required for integration.
+
+Preserve the existing coding style, architecture, folder structure, naming conventions, TypeScript configuration, ESLint configuration, response format, logging format, middleware, testing structure, validation structure, repository pattern, service pattern, controllers, interfaces, and models.
+
+This stage must extend the existing project professionally.
+
+------------------------------------------------------------
+
+## PROJECT GOAL (VERY IMPORTANT)
+
+Remember the original vision.
+
+This is NOT an ecommerce website.
+
+This is NOT Instagram.
+
+This is NOT LinkedIn.
+
+This is NOT Kickstarter.
+
+This is an Innovation Marketplace where innovators can:
+
+• publish innovations
+• upload projects
+• showcase research
+• discover innovators
+• collaborate
+• receive feedback
+• build teams
+• attract investors
+• participate in innovation challenges
+• grow an innovation ecosystem
+
+Everything implemented in this stage must support this vision.
+
+------------------------------------------------------------
+
+# IMPLEMENT THE FOLLOWING MODULES
+
+Implement completely.
+
+No placeholders.
+
+No TODOs.
+
+Production-ready.
+
+------------------------------------------------------------
+
+MODULE 1
+
+Bookmarks / Saved Innovations
+
+Users can:
+
+• bookmark innovations
+• remove bookmark
+• list bookmarked innovations
+• check bookmark status
+
+Backend
+
+Create
+
+controllers
+
+services
+
+repository
+
+interfaces
+
+models
+
+validators
+
+swagger
+
+routes
+
+tests
+
+Features
+
+POST bookmark
+
+DELETE bookmark
+
+GET bookmarked innovations
+
+GET bookmark status
+
+Pagination
+
+Duplicate prevention
+
+Ownership validation
+
+------------------------------------------------------------
+
+MODULE 2
+
+Likes
+
+Users can
+
+Like innovation
+
+Unlike innovation
+
+Count likes
+
+Check like status
+
+Update innovation statistics
+
+Prevent duplicate likes
+
+Return proper response
+
+------------------------------------------------------------
+
+MODULE 3
+
+Innovation Views
+
+Track
+
+unique views
+
+anonymous views
+
+logged-in views
+
+view count
+
+last viewed
+
+Do not count repeated refreshes continuously.
+
+------------------------------------------------------------
+
+MODULE 4
+
+Search Engine
+
+Create production search
+
+Search by
+
+Title
+
+Description
+
+Category
+
+Tags
+
+Inventor
+
+Technology
+
+Problem solved
+
+Solution
+
+Country
+
+Institute
+
+Company
+
+Search suggestions
+
+Pagination
+
+Sorting
+
+Filtering
+
+Mongo indexes
+
+------------------------------------------------------------
+
+MODULE 5
+
+Advanced Filters
+
+Newest
+
+Oldest
+
+Trending
+
+Most liked
+
+Most viewed
+
+Recently updated
+
+Category
+
+Technology
+
+Country
+
+Innovation stage
+
+Patent status
+
+Funding status
+
+Team size
+
+Open collaboration
+
+------------------------------------------------------------
+
+MODULE 6
+
+Recommendation Engine (Rule Based)
+
+Recommend innovations using
+
+same category
+
+same tags
+
+same technology
+
+same inventor interests
+
+popular innovations
+
+recent innovations
+
+trending innovations
+
+------------------------------------------------------------
+
+MODULE 7
+
+Homepage Feed
+
+Create
+
+Latest
+
+Trending
+
+Recommended
+
+Featured
+
+Popular
+
+Most Discussed
+
+Recently Updated
+
+Backend APIs
+
+Frontend integration ready
+
+------------------------------------------------------------
+
+MODULE 8
+
+Statistics
+
+Innovation statistics
+
+User statistics
+
+Platform statistics
+
+Examples
+
+Total innovations
+
+Total innovators
+
+Total likes
+
+Total bookmarks
+
+Total views
+
+Categories
+
+Most active users
+
+Growth statistics
+
+------------------------------------------------------------
+
+MODULE 9
+
+Dashboard Improvements
+
+Innovator Dashboard
+
+Show
+
+Total innovations
+
+Views
+
+Likes
+
+Bookmarks
+
+Comments
+
+Followers
+
+Recent activity
+
+Pending collaboration requests
+
+Analytics cards
+
+Charts-ready response
+
+------------------------------------------------------------
+
+MODULE 10
+
+MongoDB Optimization
+
+Indexes
+
+Aggregation pipelines
+
+Projection
+
+Pagination optimization
+
+Lean queries
+
+Performance improvements
+
+------------------------------------------------------------
+
+MODULE 11
+
+Validation
+
+Validate everything
+
+Duplicate records
+
+ObjectId
+
+Pagination
+
+Query parameters
+
+Sorting
+
+Filtering
+
+Security
+
+------------------------------------------------------------
+
+MODULE 12
+
+Testing
+
+Create
+
+Unit Tests
+
+Repository Tests
+
+API Tests
+
+Validation Tests
+
+Integration Tests
+
+Do not remove previous tests.
+
+------------------------------------------------------------
+
+MODULE 13
+
+Swagger
+
+Every endpoint
+
+must include
+
+Summary
+
+Description
+
+Parameters
+
+Responses
+
+Schemas
+
+Examples
+
+Authentication
+
+Tags
+
+Swagger must correctly display every new endpoint.
+
+------------------------------------------------------------
+
+MODULE 14
+
+Frontend Preparation
+
+Prepare APIs so frontend can immediately consume
+
+Consistent response
+
+Pagination metadata
+
+Sorting metadata
+
+Filter metadata
+
+Statistics metadata
+
+No frontend implementation yet.
+
+------------------------------------------------------------
+
+MODULE 15
+
+Documentation
+
+Automatically generate THREE markdown documents inside
+
+prompts/Stage_05/
+
+Create exactly these files
+
+Stage_05_Implementation_Plan.md
+
+Stage_05_Task_List.md
+
+Stage_05_Walkthrough.md
+
+------------------------------------------------------------
+
+Implementation Plan
+
+Include
+
+Architecture overview
+
+Modules
+
+Folder changes
+
+Database changes
+
+API design
+
+Flow diagrams (Markdown)
+
+Implementation sequence
+
+Validation strategy
+
+Testing strategy
+
+Swagger coverage
+
+Expected outputs
+
+Deployment notes
+
+------------------------------------------------------------
+
+Task List
+
+Create a professional checklist
+
+Example
+
+Authentication
+
+Innovation Module
+
+Bookmarks
+
+Likes
+
+Views
+
+Search
+
+Filters
+
+Recommendations
+
+Statistics
+
+Dashboard
+
+Swagger
+
+Testing
+
+Validation
+
+Documentation
+
+Every item must have checkboxes.
+
+------------------------------------------------------------
+
+Walkthrough
+
+Write a beginner-friendly guide
+
+Explain
+
+every module
+
+every endpoint
+
+folder structure
+
+testing
+
+swagger
+
+verification
+
+common errors
+
+how to run
+
+how to verify
+
+expected output
+
+future improvements
+
+------------------------------------------------------------
+
+GENERAL REQUIREMENTS
+
+Maintain repository pattern
+
+Maintain service layer
+
+Maintain controller layer
+
+Maintain modular architecture
+
+No duplicated code
+
+No breaking changes
+
+No placeholders
+
+No unfinished methods
+
+No fake implementations
+
+Every endpoint functional
+
+Production-ready code only
+
+Keep coding style consistent with existing project
+
+Generate final implementation report including
+
+Files created
+
+Files modified
+
+Routes added
+
+Database models added
+
+Indexes added
+
+Tests added
+
+Swagger coverage
+
+Documentation generated
+
+Verification checklist
+
+Remaining blockers (only if unavoidable)
